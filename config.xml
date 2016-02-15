@@ -6,14 +6,14 @@
         id        = "com.phonegap.app"
         version   = "1.0.0">
 
-    <name>Hello World</name>
+    <name>App</name>
 
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Demo application that responds to the deviceready event.
     </description>
 
-    <author href="http://phonegap.com" email="support@phonegap.com">
-        PhoneGap Team
+    <author href="http://phonegap.com" email="vishu3278@gmail.com">
+        WoW Team
     </author>
 
     <!--
@@ -129,9 +129,9 @@
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
-    <platform name="ios">
+    <!--<platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
-    </platform>
+    </platform>-->
 
 </widget>
