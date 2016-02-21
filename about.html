@@ -10,10 +10,9 @@
         <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
         <script type="text/javascript">
             function initdevice(){
-                // document.addEventListener("deviceready", onDeviceReady, false);
                 alert("about page");
-                // navigator.alert("about page javascript");
-                onDeviceReady();
+                
+                // onDeviceReady();
             }
             document.addEventListener("deviceready", onDeviceReady, false);
             function onDeviceReady() {
@@ -24,8 +23,8 @@
             window.addEventListener("batterystatus", onBatteryStatus, false);
             function onBatteryStatus(info) {
                 // Handle the online event
-                console.log("Level: " + info.level + " isPlugged: " + info.isPlugged);
-                $("#batt").html(info.level)
+                // console.log("Level: " + info.level + " isPlugged: " + info.isPlugged);
+                jQuery("#batt").text(info.level)
             }
         </script>
     </head>
@@ -47,7 +46,7 @@
                     <img src="img/spinner2x.png" alt="spinner">
                 </div>
                 <div class="four column">
-                    <p id="batt"></p>
+                    <p id="batt">this area will show battery</p>
                 </div>
             </div>
             
