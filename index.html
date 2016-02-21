@@ -9,15 +9,18 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
         <script type="text/javascript">
-            document.addEventListener("deviceready", onDeviceReady, false);
+            function initdevice(){
+                document.addEventListener("deviceready", onDeviceReady, false);
+            }
+            
             function onDeviceReady() {
-                console.log(device.model);
+                //console.log(device.model);
                 alert(device.model);
                 $(".footer").html(device.platform);
             }
         </script>
     </head>
-    <body>
+    <body onload="initdevice()">
        <div class="topcoat-navigation-bar">
             <h1 class="header">App</h1>
        </div>
