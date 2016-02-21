@@ -11,29 +11,25 @@
         <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
         <script type="text/javascript">
             function initdevice(){
-                document.addEventListener("deviceready", onDeviceReady, false);
-                alert("body load");
-            }
-            
-            function onDeviceReady() {
-                //console.log(device.model);
-                alert(device.model);
-                // $(".footer").html(device.platform);
+                // document.addEventListener("deviceready", onDeviceReady, false);
+                alert("about page");
+                navigator.alert("about page");
+                
             }
         </script>
     </head>
     <body onload="initdevice()">
        <div class="container">
             <h1 >App</h1>
-            <h2 >Home Page</h2>
+            <h2 >About Page</h2>
             <div class="row">
-                <div class="four columns">
+                <div class="five columns">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, ut iste officiis ab veritatis alias quisquam asperiores incidunt accusamus beatae dolorem ducimus quaerat tempora corrupti, facilis illum natus, cupiditate excepturi.</p></div>
-                <div class="eight columns"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui beatae consequuntur repellat repellendus iure omnis sit nemo, delectus minus voluptatum. Aut labore, a ipsum hic distinctio iusto assumenda nemo suscipit.</p><p>This is test application to test some cordova plugins.</p></div>
+                <div class="seven columns"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui beatae consequuntur repellat repellendus iure omnis sit nemo, delectus minus voluptatum. Aut labore, a ipsum hic distinctio iusto assumenda nemo suscipit.</p><p>This is test application to test some cordova plugins.</p></div>
                 
             </div>
             <div class="row">
-                <a href="about.html" class="button button-primary">About Page</a>
+                <a href="index.html" class="button">Home page</a>
             </div>
         </div>
         
