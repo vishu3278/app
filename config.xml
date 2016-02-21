@@ -6,17 +6,10 @@
         id        = "com.phonegap.app"
         version   = "1.0.0">
 
-<<<<<<< HEAD
     <name>App demo</name>
 
     <description>
         Demo Application that responds to the deviceready event.
-=======
-    <name>App</name>
-
-    <description>
-        Demo application that responds to the deviceready event.
->>>>>>> 971658cf8f269da934c9aaf8cdea862455976867
     </description>
 
     <author href="http://phonegap.com" email="vishu3278@gmail.com">
@@ -54,7 +47,6 @@
     <!-- Plugins -->
 
     <!-- Core plugins -->
-<<<<<<< HEAD
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.battery-status" />
     <gap:plugin name="org.apache.cordova.device" />
@@ -63,14 +55,6 @@
     <gap:plugin name="org.apache.cordova.console" />
     <gap:plugin name="org.apache.cordova.contacts" />
     
-=======
-    <!--<gap:plugin name="org.apache.cordova.battery-status" />
-    <gap:plugin name="org.apache.cordova.camera" />
-    <gap:plugin name="org.apache.cordova.media-capture" />
-    <gap:plugin name="org.apache.cordova.console" />
-    <gap:plugin name="org.apache.cordova.contacts" />
-    <gap:plugin name="org.apache.cordova.device" />
->>>>>>> 971658cf8f269da934c9aaf8cdea862455976867
     <gap:plugin name="org.apache.cordova.device-motion" />
     <gap:plugin name="org.apache.cordova.device-orientation" />
     <gap:plugin name="org.apache.cordova.dialogs" />
@@ -81,11 +65,7 @@
     <gap:plugin name="org.apache.cordova.inappbrowser" />
     <gap:plugin name="org.apache.cordova.media" />
     <gap:plugin name="org.apache.cordova.network-information" />
-<<<<<<< HEAD
     
-=======
-    <gap:plugin name="org.apache.cordova.splashscreen" />
->>>>>>> 971658cf8f269da934c9aaf8cdea862455976867
     <gap:plugin name="org.apache.cordova.vibration" />-->
     
     
@@ -155,10 +135,6 @@
     
     <platform name="android">
         <allow-intent href="market:*" />
-<<<<<<< HEAD
-=======
-        <plugin name="org.apache.cordova.core.device" source="pgb" spec="n/a" version="0.3.0" />
->>>>>>> 971658cf8f269da934c9aaf8cdea862455976867
     </platform>
     <!--<platform name="ios">
         <allow-intent href="itms:*" />
