@@ -13,8 +13,13 @@
             function initdevice(){
                 // document.addEventListener("deviceready", onDeviceReady, false);
                 alert("about page");
-                navigator.alert("about page javascript");
-                
+                // navigator.alert("about page javascript");
+                onDeviceReady();
+            }
+            document.addEventListener("deviceready", onDeviceReady, false);
+            function onDeviceReady() {
+                console.log(device.cordova);
+                alert("device ready about page");
             }
         </script>
     </head>
