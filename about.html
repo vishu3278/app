@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/skeleton.css">
-        <link rel="stylesheet" type="text/css" href="style.css">
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
         <script type="text/javascript">
@@ -18,8 +17,15 @@
             }
             document.addEventListener("deviceready", onDeviceReady, false);
             function onDeviceReady() {
-                console.log(device.cordova);
+                // console.log(device.cordova);
                 alert("device ready about page");
+            }
+
+            window.addEventListener("batterystatus", onBatteryStatus, false);
+            function onBatteryStatus(info) {
+                // Handle the online event
+                console.log("Level: " + info.level + " isPlugged: " + info.isPlugged);
+                $("#batt").html(info.level)
             }
         </script>
     </head>
@@ -34,9 +40,17 @@
                 
             </div>
             <div class="row">
-                <a href="index.html" class="button">Home page</a><img src="img/spinner2x.png" alt="spinner">
-
+                <div class="four column">
+                    <a href="index.html" class="button">Home page</a>
+                </div>
+                <div class="four column">
+                    <img src="img/spinner2x.png" alt="spinner">
+                </div>
+                <div class="four column">
+                    <p id="batt"></p>
+                </div>
             </div>
+            
         </div>
         
         
