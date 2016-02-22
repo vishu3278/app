@@ -9,7 +9,7 @@
     <name>App demo</name>
 
     <description>
-        Demo Application that responds to the deviceready event.
+        Demo Application that responds to various cordova plugins event.
     </description>
 
     <author href="http://phonegap.com" email="vishu3278@gmail.com">
