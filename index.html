@@ -12,13 +12,13 @@
         <script type="text/javascript">
             function initdevice(){
                 document.addEventListener("deviceready", onDeviceReady, false);
-                alert("body load javascript");
+//                alert("body load javascript");
             }
             
             function onDeviceReady() {
-                //console.log(device.model);
-                alert(device.model);
-                // $(".footer").html(device.platform);
+//                alert(device.model);
+                $("#model").html(device.model);
+                $("#platform").html(device.platform);
             }
         </script>
     </head>
@@ -35,7 +35,14 @@
             <div class="row">
                 <div class="one-half"><img src="img/dialog-zone-bg.png" alt=""></div>
                 <div class="one-half"><a href="about.html" class="button button-primary">About Page</a></div>
-
+            </div>
+            <div class="row">
+                <div class="one-half">
+                    <h4 id="model"></h4>
+                </div>
+                <div class="one-half">
+                    <h4 id="platform"></h4>
+                </div>
             </div>
         </div>
         
