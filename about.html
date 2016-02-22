@@ -7,22 +7,9 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/skeleton.css">
         <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
-        <script type="text/javascript">
-            function initdevice(){
-//                alert("about page");
-                
-                // onDeviceReady();
-            }
-
-            window.addEventListener("batterystatus", onBatteryStatus, false);
-            function onBatteryStatus(info) {
-                // Handle the online event
-                // console.log("Level: " + info.level + " isPlugged: " + info.isPlugged);
-                jQuery("#batt").text(info.level)
-            }
-        </script>
+        <script type="text/javascript" src="app.js"></script>
     </head>
-    <body onload="initdevice()">
+    <body>
        <div class="container">
             <h1 >App</h1>
             <h2 >About Page</h2>
@@ -40,7 +27,7 @@
                     <img src="img/spinner2x.png" alt="spinner">
                 </div>
                 <div class="four column">
-                    <p id="batt">this area will show battery</p>
+                    <h5 id="batt">this area will show battery</h5>
                 </div>
             </div>
             
