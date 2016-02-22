@@ -5,12 +5,12 @@ function initdevice(){
 
 function onDeviceReady() {
     $("#model").html(device.model);
-    $("#platform").html("Platform = "+device.platform+" + Cordova = "+device.cordova);
+    $("#platform").html("Platform = "+device.platform+"<br/>Cordova = "+device.cordova);
 }
 
 function onBatteryStatus(info) {
     // Handle the online event
-    $("#batt").html("Battery level = "+info.level+"Plugged="+info.isPlugged);
+    $("#batt").html("Battery level = "+info.level+"<br/>Plugged="+info.isPlugged);
 }
 
 function checkConnection() {
@@ -29,4 +29,4 @@ function checkConnection() {
     alert('Connection type: ' + states[networkState]);
 }
 
-checkConnection();
+//checkConnection();
