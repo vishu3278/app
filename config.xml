@@ -96,6 +96,7 @@
     <icon src="res/icon/windows-phone/icon-173.png" gap:platform="winphone"   gap:role="background" /> -->
 
     <!-- Define app splash screen for each platform. -->
+    
     <gap:splash src="splash.png" gap:platform="android" gap:qualifier="port-ldpi" />
     <gap:splash src="splash.png" gap:platform="android" gap:qualifier="port-mdpi" />
     <gap:splash src="splash.png" gap:platform="android" gap:qualifier="port-hdpi" />
@@ -138,6 +139,13 @@
     
     <platform name="android">
         <allow-intent href="market:*" />
+        <preference name="SplashScreen" value="splash.png" />
+        <preference name="SplashScreenDelay" value="4000" />
+        <preference name="SplashMaintainAspectRatio" value="true" />
+        <preference name="SplashScreenBackgroundColor" value="#002a50" /> <!-- defaults to "#464646" -->
+        <preference name="ShowSplashScreen" value="true" /> <!-- defaults to "true" -->
+        <preference name="SplashScreenWidth" value="480" /> <!-- defaults to "170" -->
+        <preference name="SplashScreenHeight" value="800" /> <!-- defaults to "200" -->
     </platform>
     <!--<platform name="ios">
         <allow-intent href="itms:*" />
