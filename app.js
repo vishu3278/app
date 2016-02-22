@@ -10,7 +10,7 @@ function onDeviceReady() {
 
 function onBatteryStatus(info) {
     // Handle the online event
-    $("#batt").html("Battery level = "+info.level);
+    $("#batt").html("Battery level = "+info.level+"Plugged="+info.isPlugged);
 }
 
 function checkConnection() {
