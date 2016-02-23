@@ -32,8 +32,9 @@ function checkConnection() {
     states[Connection.CELL]     = 'Cell generic connection';
     states[Connection.NONE]     = 'No network connection';
 
-    $(this).html(states[networkState]);
-    alert('Connection type: ' + states[networkState]);
+    /*$(this).html(states[networkState]);*/
+//    alert('Connection type: ' + states[networkState]);
+    notie.alert(1, states[networkState], 3);
 //    return(states[networkState]);
     
 }
