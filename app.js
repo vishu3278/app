@@ -34,9 +34,11 @@ function checkConnection() {
 
     /*$(this).html(states[networkState]);*/
     alert('Connection type: ' + states[networkState]);
+    return(states[networkState]);
 }
 
 function notic(){
     var conn = checkConnection();
     notie.alert(4, 'Connection', 5);
+    notie.alert(4, conn, 5);
 }
