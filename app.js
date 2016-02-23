@@ -33,8 +33,8 @@ function checkConnection() {
     states[Connection.NONE]     = 'No network connection';
 
     /*$(this).html(states[networkState]);*/
-//    alert('Connection type: ' + states[networkState]);
-    notie.alert(4, states[networkState], 5);
+    alert('Connection type: ' + states[networkState]);
+    notie.alert(4, 'Connection type: '+states[networkState], 5);
 //    return(states[networkState]);
     
 }
