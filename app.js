@@ -34,12 +34,13 @@ function checkConnection() {
 
     /*$(this).html(states[networkState]);*/
     alert('Connection type: ' + states[networkState]);
-    notie.alert(4, 'Connection type: '+states[networkState], 5);
-//    return(states[networkState]);
+//    notie.alert(4, 'Connection type: '+states[networkState], 5);
+    return(states[networkState]);
     
 }
 
 function notic(){
-//    var conn = checkConnection();
+    var conn = checkConnection();
     notie.alert(4, 'Connection', 5);
+    notie.alert(3, conn, 3);
 }
