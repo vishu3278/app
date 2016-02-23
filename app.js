@@ -10,13 +10,12 @@ function onDeviceReady() {
 
 function onBatteryStatus(info) {
     // Handle the online event
-    $("#batt").css({'width':info.level+'%','background':'#152535'}).text(info.level);
+    $("#batt").css({'width':info.level+'%'}).prepend(info.level);
     if(info.isPlugged == true){
-        $("#plug").css({'background-color':'red'}).html('Charging...');
+        $("#plug").css({'background-color':'red'}).append('charging...');
     }else{
-        $("#plug").css({'background-color':'green'}.html('Not chargin'));
+        $("#plug").css({'background-color':'green'}.append('unplugged.'));
     }
-        
 }
 
 function checkConnection() {
