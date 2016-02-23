@@ -36,11 +36,12 @@ function checkConnection() {
     alert('Connection type: ' + states[networkState]);
 //    notie.alert(4, 'Connection type: '+states[networkState], 5);
     return(states[networkState]);
-    
+    console.log(states[networkState]);
 }
 
 function notic(){
     var conn = checkConnection();
     notie.alert(4, 'Connection', 5);
-    notie.alert(3, conn, 3);
+    console.log(conn);
+//    notie.alert(3, conn, 3);
 }
