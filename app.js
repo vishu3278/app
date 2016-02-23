@@ -10,7 +10,8 @@ function onDeviceReady() {
 
 function onBatteryStatus(info) {
     // Handle the online event
-    $("#batt").css({'width':info.level+'%'}).prepend(info.level);
+    $("#batt").css({'width':info.level+'%'}).children("#percent").html(info.level);
+    
     if(info.isPlugged == true){
         $("#plug").css({'background-color':'red'}).append('charging...');
     }else{

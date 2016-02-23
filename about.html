@@ -6,20 +6,22 @@
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/skeleton.css">
-        <script src="cordova.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
-        <script type="text/javascript" src="app.js"></script>
+        
     </head>
     <body>
        <div class="container">
-            <h1 >App</h1>
-            <h2 >About Page</h2>
+            <h1>App</h1>
+            <h2>About Page</h2>
             <div class="row">
                 <div class="five columns">
                     <img src="img/vishu456goa.jpg" alt="vishu">
                 </div>
-                <div class="seven columns"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui beatae consequuntur repellat repellendus iure omnis sit nemo, delectus minus voluptatum. Aut labore, a ipsum hic distinctio iusto assumenda nemo suscipit.</p><p>This is test application to test some cordova plugins.</p></div>
-                
+                <div class="seven columns">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui beatae consequuntur repellat repellendus iure omnis sit nemo, delectus minus voluptatum. Aut labore, a ipsum hic distinctio iusto assumenda nemo suscipit.</p><p>This is test application to test some cordova plugins.</p>
+                </div>
             </div>
             <div class="row">
                 <div class="five columns">
@@ -29,10 +31,7 @@
                     <a onclick="checkConnection()" class="button">Check Connection</a>
                 </div>
            </div>
-               <div class="row">    
-                <div class="six columns">
-                    <h5 id="batt">This area will show battery and plugged status.</h5>
-                </div>
+            <div class="row">
                 <div class="six columns">
                     <h6><button class="button" onclick="checkConnection()">Connection Status</button></h6>
                 </div>
@@ -40,6 +39,6 @@
             
         </div>
         
-        
+        <script type="text/javascript" src="app.js"></script>
     </body>
 </html>
