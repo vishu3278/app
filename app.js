@@ -27,6 +27,7 @@ function checkConnection() {
     states[Connection.NONE]     = 'No network connection';
 
 //    alert('Connection type: ' + states[networkState]);
-    return(states[networkState]);
+//    return(states[networkState]);
+    $(this).html(states[networkState]);
 }
 
