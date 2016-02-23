@@ -31,13 +31,19 @@
            </div>
            <div class="row">
                 <div class="four columns">
-                    <h6 id="batt">This area will show battery and plugged status.</h6>
+                    <div >
+                        <h6>This area will show battery and plugged status.</h6>
+                        <div style="border:1px solid #333">
+                            <div id="batt" style="background-color:#152535" ></div>
+                        </div>
+                        <div id="plug">&nbsp;</div>
+                    </div>
                 </div>
                 <div class="six columns">
-                    <a href="#" class="button">Check Connection</a>
+                    <a onclick="checkConnection()" class="button">Check Connection</a>
                 </div>
                 <div class="two columns">
-                    <a href="#" class="button">Go</a>
+                    <a class="button">Go</a>
                 </div>
             </div>
         </div>
