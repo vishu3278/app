@@ -39,6 +39,5 @@ function checkConnection() {
 
 function notic(){
     var conn = checkConnection();
-    notie.alert(4, 'Connection', 5);
-    notie.alert(4, conn, 5);
+    $('#conn').html(conn);
 }
