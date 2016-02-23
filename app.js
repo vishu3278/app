@@ -10,11 +10,11 @@ function onDeviceReady() {
 
 function onBatteryStatus(info) {
     // Handle the online event
-    $("#batt").css({'width': info.level+'%'});
+    $("#batt").css({'width':info.level+'%','background':'#152535'}).text(info.level);
     if(info.isPlugged == true){
-        $("#plug").css({'background-color':'red'}).text('Charging...');
+        $("#plug").css({'background-color':'red'}).html('Charging...');
     }else{
-        $("#plug").css({'background-color':'green'}.text('Not chargin'));
+        $("#plug").css({'background-color':'green'}.html('Not chargin'));
     }
         
 }
@@ -32,8 +32,9 @@ function checkConnection() {
     states[Connection.CELL]     = 'Cell generic connection';
     states[Connection.NONE]     = 'No network connection';
 
+    $(this).html(states[networkState]);
     alert('Connection type: ' + states[networkState]);
 //    return(states[networkState]);
-    $(this).html(states[networkState]);
+    
 }
 
