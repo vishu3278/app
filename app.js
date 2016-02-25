@@ -32,16 +32,14 @@ function checkConnection() {
     states[Connection.CELL]     = 'Cell generic connection';
     states[Connection.NONE]     = 'No network connection';
 
-    /*$(this).html(states[networkState]);*/
-    alert('Connection type: ' + states[networkState]);
+    $(this).html(states[networkState]);
+//    alert('Connection type: ' + states[networkState]);
     return(states[networkState]);
 }
 
-function notic(){
-    var conn = checkConnection();
-<<<<<<< HEAD
+function notic(elem){
+    var conn = checkConnection(),
+        elem = $(elem);
     
-=======
-    $('#conn').html(conn);
->>>>>>> f5568f24a57db60710d7084b46627abc368f2709
+    elem.html(conn);
 }
