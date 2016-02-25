@@ -39,5 +39,9 @@ function checkConnection() {
 
 function notic(){
     var conn = checkConnection();
+<<<<<<< HEAD
     
+=======
+    $('#conn').html(conn);
+>>>>>>> f5568f24a57db60710d7084b46627abc368f2709
 }
