@@ -22,6 +22,10 @@ footer,
 .content .title {
   font-size: 24px;
 }
+.footer {
+  background: #ddd;
+  text-align: center;
+}
 img {
   max-width: 100%;
   height: auto;
@@ -29,4 +33,7 @@ img {
 #batt {
   background-color: darkolivegreen;
   color: azure;
+}
+.navbar {
+  background: #ddd;
 }
