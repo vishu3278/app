@@ -13,9 +13,9 @@ function onBatteryStatus(info) {
     $("#batt").css({'width':info.level+'%'}).children("#percent").html(info.level);
     
     if(info.isPlugged == true){
-        $("#plug").css({'background-color':'red'}).append('charging...');
+        $("#plug").css({'background-color':'red'}).html('charging...');
     }else{
-        $("#plug").css({'background-color':'green'}.append('unplugged.'));
+        $("#plug").css({'background-color':'green'}.html('unplugged.'));
     }
 }
 
@@ -39,6 +39,5 @@ function checkConnection() {
 
 function notic(){
     var conn = checkConnection();
-    notie.alert(4, 'Connection', 5);
-    notie.alert(4, conn, 5);
+    
 }
