@@ -4,19 +4,11 @@
         <title>App</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-        <link rel="stylesheet" href="css/container.min.css">
-        <link rel="stylesheet" href="css/grid.min.css">
-        <link rel="stylesheet" href="css/button.min.css">
-        <link rel="stylesheet" href="css/header.min.css">
-        <link rel="stylesheet" href="css/list.min.css">
-        <link rel="stylesheet" href="css/menu.min.css">
-        <link rel="stylesheet" href="css/icon.min.css">
-        <link rel="stylesheet" href="css/form.min.css">
-        <link rel="stylesheet" href="css/segment.min.css">
+        <link rel="stylesheet" href="semantic.min.css">
         <link rel="stylesheet" href="style.css">
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
-        <script type="text/javascript" src="js/semantic.min.js"></script>
+        <script type="text/javascript" src="semantic.min.js"></script>
     </head>
     <body>
        <div class="ui container">
@@ -24,7 +16,7 @@
             <h2>About Page</h2>
             <div class="ui grid">
                 <div class="six column wide">
-                    <img src="img/vishu456goa.jpg" alt="vishu">
+                    <img src="img/vishu456goa.jpg" class="ui small image" alt="vishu">
                 </div>
             </div>
             <div class="ui grid">
@@ -35,12 +27,12 @@
                     <a href="index.html" class="button">Home page</a>
                 </div>
             </div>
-            <div class="ui grid">
-                <div class="eight column wide">
-                    <a onclick="checkConnection()" class="ui button">Check Connection</a>
+            <div class="ui two column grid">
+                <div class="column">
+                    <a onclick="checkConnection(this)" class="ui button">Check Connection</a>
                 </div>
            
-                <div class="eight column wide">
+                <div class="column">
                     <h6><button class="ui button" onclick="">Go</button></h6>
                     <div id="conn"></div>
                 </div>
