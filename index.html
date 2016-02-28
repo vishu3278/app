@@ -16,32 +16,38 @@
             <h3 class="ui header">Home Page</h3>
             <div class="ui grid">
                 <div class="nine wide column">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, ut iste officiis ab veritatis alias quisquam asperiores incidunt accusamus beatae dolorem ducimus quaerat tempora corrupti, facilis illum natus, cupiditate excepturi.</p></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, ut iste officiis ab veritatis alias quisquam asperiores incidunt accusamus beatae dolorem ducimus quaerat tempora corrupti, facilis illum natus, cupiditate excepturi.</p>
+                <p><a href="about.html" class="ui fluid violet button">About Page</a></p>
+                </div>
                 <div class="seven wide column"><img src="img/avatar.jpg" class="ui image" alt="vishu"></div>
             </div>
             
             <div class="ui grid">
-                <div class="six wide columns"><a href="about.html" class="button button-primary">About Page</a></div>
-                <div class="ten wide columns">
+                <div class="six wide column">
+                    <h5>This area will show device properties.</h5>
+                </div>
+                <div class="ten wide column">
                     <h4 id="model"></h4>
                     <h5 id="platform"></h5>
                 </div>
            </div>
-           <div class="ui grid">
-                <div class="six wide columns">
-                    <div >
-                        <h6>This area will show battery and plugged status.</h6>
-                        <div style="border:1px solid #333">
-                            <div id="batt"><span id="percent"></span> %</div>
-                        </div>
-                        <div id="plug">Device is </div>
-                    </div>
+           <div class="ui teal raised segment">
+               <h4>This area will show battery and plugged status.</h4>
+                <div class="ui progress">
+                    <div class="bar" id="batt">
+                    <div class="label" id="percent"></div> %</div>
                 </div>
-                <div class="six wide columns">
-                    <a onclick="checkConnection()" class="button">Check Connection</a>
+               <div id="plug" class="ui label">Device is </div>
+           </div>
+           
+           
+
+           <div class="ui two column grid">
+                <div class="column">
+                    <a onclick="checkConnection()" class="ui basic fluid button">Connection</a>
                 </div>
-                <div class="four wide columns">
-                    <a class="button" onclick="notic(this)">Check</a>
+                <div class="column">
+                    <a class="ui basic fluid orange button" onclick="notic(this)">Check</a>
                     <div id="conn"></div>
                 </div>
             </div>
