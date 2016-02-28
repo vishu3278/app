@@ -4,33 +4,31 @@
         <title>App</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/skeleton.css">
-        <link rel="stylesheet" href="css/chui-android-3.8.3.min.css">
+        <link rel="stylesheet" href="semantic.min.css">
         <link rel="stylesheet" type="text/css" href="style.css">
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
-        
+        <script type="text/javascript" src="semantic.min.js"></script>
     </head>
     <body onload="initdevice()">
-       <div class="container">
-            <h1 >App</h1>
-            <h2 >Home Page</h2>
-            <div class="row">
-                <div class="seven columns">
+       <div class="ui container">
+            <h1 class="ui header">App</h1>
+            <h3 class="ui header">Home Page</h3>
+            <div class="ui grid">
+                <div class="nine wide column">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, ut iste officiis ab veritatis alias quisquam asperiores incidunt accusamus beatae dolorem ducimus quaerat tempora corrupti, facilis illum natus, cupiditate excepturi.</p></div>
-                <div class="five columns"><img src="img/avatar.jpg" alt="vishu"></div>
+                <div class="seven wide column"><img src="img/avatar.jpg" class="ui image" alt="vishu"></div>
             </div>
             
-            <div class="row">
-                <div class="four columns"><a href="about.html" class="button button-primary">About Page</a></div>
-                <div class="eight columns">
+            <div class="ui grid">
+                <div class="six wide columns"><a href="about.html" class="button button-primary">About Page</a></div>
+                <div class="ten wide columns">
                     <h4 id="model"></h4>
                     <h5 id="platform"></h5>
                 </div>
            </div>
-           <div class="row">
-                <div class="four columns">
+           <div class="ui grid">
+                <div class="six wide columns">
                     <div >
                         <h6>This area will show battery and plugged status.</h6>
                         <div style="border:1px solid #333">
@@ -39,10 +37,10 @@
                         <div id="plug">Device is </div>
                     </div>
                 </div>
-                <div class="six columns">
+                <div class="six wide columns">
                     <a onclick="checkConnection()" class="button">Check Connection</a>
                 </div>
-                <div class="two columns">
+                <div class="four wide columns">
                     <a class="button" onclick="notic(this)">Check</a>
                     <div id="conn"></div>
                 </div>

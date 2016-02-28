@@ -12,28 +12,30 @@
     </head>
     <body>
        <div class="ui container">
-            <h1>App</h1>
-            <h2>About Page</h2>
+            <h1 class="ui top attached center aligned brown header">App</h1>
+            <h3 class="ui header">About Page</h3>
             <div class="ui grid">
-                <div class="six column wide">
+                <div class="six wide column">
                     <img src="img/vishu456goa.jpg" class="ui small image" alt="vishu">
+                </div>
+                <div class="ten wide column">
+                    <p>This is test application to test some cordova plugins.</p>
+                    <p><a href="index.html" class="ui circular basic blue icon button"><i class="home icon"></i></a></p>
                 </div>
             </div>
             <div class="ui grid">
-                <div class="ten column wide">
-                    <p>This is test application to test some cordova plugins.</p>
-                </div>
-                <div class="six column wide">
-                    <a href="index.html" class="button">Home page</a>
+                
+                <div class="six wide column">
+                    
                 </div>
             </div>
             <div class="ui two column grid">
                 <div class="column">
-                    <a onclick="checkConnection(this)" class="ui button">Check Connection</a>
+                    <a onclick="checkConnection(this)" class="ui basic purple fluid button">Check Connection</a>
                 </div>
            
                 <div class="column">
-                    <h6><button class="ui button" onclick="">Go</button></h6>
+                    <button class="ui basic green fluid button" onclick="">Go</button>
                     <div id="conn"></div>
                 </div>
             </div>
