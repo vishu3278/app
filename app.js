@@ -43,3 +43,24 @@ function notic(elem){
     
     elem.html(conn);
 }
+
+function cameraGo(elem){
+    var options = {
+        sourceType:'CAMERA',
+        quality:50,
+        destinationType:'FILE_URI',
+        mediaType:'PICTURE',
+        encodingType:'JPEG',
+
+    };
+    
+    camera.getPicture(successCallback, errorCallback, options);
+
+    function successCallback(imageURI){
+        alert(imageURI);
+        $("#capture").attr('src',imageURI);
+    };
+    function errorCallback (message) {
+        alert(message);
+    }
+}

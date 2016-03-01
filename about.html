@@ -23,23 +23,18 @@
                     <p><a href="index.html" class="ui circular basic blue icon button"><i class="home icon"></i></a></p>
                 </div>
             </div>
-            <div class="ui grid">
-                
-                <div class="six wide column">
-                    
-                </div>
-            </div>
+            
             <div class="ui two column grid">
                 <div class="column">
                     <a onclick="checkConnection(this)" class="ui basic purple fluid button">Check Connection</a>
                 </div>
-           
-                <div class="column">
-                    <button class="ui basic green fluid button" onclick="">Go</button>
-                    <div id="conn"></div>
-                </div>
-            </div>
+                <div class="column"></div>
                 
+            </div>
+                <div class="ui segment">
+                    <button class="ui basic green fluid button" onclick="cameraGo(this)" >Camera</button>
+                    <div class=""><img src="" id="capture" alt="captured image" width="300" height="400"></div>
+                </div>
             </div>
             
         </div>
