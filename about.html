@@ -1,44 +1,46 @@
 <!doctype html>
 <html>
-    <head>
-        <title>App</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-        <link rel="stylesheet" href="semantic.min.css">
-        <link rel="stylesheet" href="style.css">
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
-        <script type="text/javascript" src="semantic.min.js"></script>
-    </head>
-    <body onload="initdevice()">
-       <div class="ui container">
-            <h1 class="ui top attached center aligned brown header">App</h1>
-            <h3 class="ui header">About Page</h3>
-            <div class="ui grid">
-                <div class="six wide column">
-                    <img src="img/vishu456goa.jpg" class="ui small image" alt="vishu">
-                </div>
-                <div class="ten wide column">
-                    <p>This is test application to test some cordova plugins.</p>
-                    <p><a href="index.html" class="ui circular basic blue icon button"><i class="home icon"></i></a></p>
-                </div>
+
+<head>
+    <title>App</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <link rel="stylesheet" href="semantic.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="cordova.js"></script>
+
+</head>
+
+<body onload="initdevice()">
+    <div class="ui container">
+        <h1 class="ui top attached center aligned brown header">App</h1>
+        <h3 class="ui header">About Page</h3>
+        <div class="ui grid">
+            <div class="six wide column">
+                <img src="img/vishu456goa.jpg" class="ui small image" alt="vishu">
             </div>
-            
-            <div class="ui two column grid">
-                <div class="column">
-                    <a onclick="checkConnection(this)" class="ui basic purple fluid button">Check Connection</a>
-                </div>
-                <div class="column"></div>
-                
+            <div class="ten wide column">
+                <p>This is test application to test some cordova plugins.</p>
+                <p><a href="index.html" class="ui circular basic blue icon button"><i class="home icon"></i></a></p>
             </div>
-                <div class="ui segment">
-                    <button class="ui basic green fluid button" onclick="cameraGo(this)" >Camera</button>
-                    <div class=""><img src="" id="capture" alt="captured image" width="300" height="400"></div>
-                </div>
-            </div>
-            
         </div>
-        
-        <script type="text/javascript" src="app.js"></script>
-    </body>
+
+        <div class="ui two column grid">
+            <div class="column">
+                <a onclick="checkConnection(this)" class="ui basic purple fluid button">Check Connection</a>
+            </div>
+            <div class="column"></div>
+
+        </div>
+        <div class="ui segment">
+            <button class="ui basic green fluid button" onclick="cameraGo(this)">Camera</button>
+            <div class=""><img src="" id="capture" alt="captured image" width="300" height="400"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="semantic.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+
 </html>
