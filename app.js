@@ -6,17 +6,17 @@ function initdevice(){
 function onDeviceReady() {
     $("#model").html(device.model);
     $("#platform").html("Platform = "+device.platform+"-"+device.version+"<br/>Cordova = "+device.cordova);
-    alert(navigator.camera);
+//    alert(navigator.camera);
 }
 
 function onBatteryStatus(info) {
     // Handle the online event
     $("#batt").css({'width':info.level+'%'}).children("#percent").html(info.level);
     
-    if(info.isPlugged == true){
-        $("#plug").css({'background-color':'red'}).html('charging...');
+    if(info.isPlugged == false){
+        $("#plug").html('Device is charging...');
     }else{
-        $("#plug").css({'background-color':'green'}.html('unplugged.'));
+        $("#plug").html('Device is unplugged.'));
     }
 }
 
@@ -47,16 +47,16 @@ function notic(elem){
 
 function cameraGo(elem){
     var options = {
-        sourceType:Camera.PictureSourceType.CAMERA,
-        quality:50,
+//        sourceType:Camera.PictureSourceType.CAMERA,
+        sourceType:Camera.PictureSourceType.PHOTOLIBRARY,
+//        quality:50,
         destinationType:Camera.DestinationType.FILE_URI
     };
-    alert(elem);
     
     navigator.camera.getPicture(successCallback, errorCallback, options);
 
     function successCallback(imageURI){
-        alert(imageURI);
+        $("#capuri").html(imageURI);
         $("#capture").attr('src',imageURI);
     };
     function errorCallback (message) {
