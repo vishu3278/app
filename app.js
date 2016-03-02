@@ -46,14 +46,12 @@ function notic(elem){
 
 function cameraGo(elem){
     var options = {
-        sourceType:'CAMERA',
+        sourceType:Camera.PictureSourceType.CAMERA,
         quality:50,
-        destinationType:'FILE_URI',
-        mediaType:'PICTURE',
-        encodingType:'JPEG',
-
+        destinationType:Camera.DestinationType.FILE_URI
     };
-    alert("camera");
+    alert(elem);
+    
     navigator.camera.getPicture(successCallback, errorCallback, options);
 
     function successCallback(imageURI){
