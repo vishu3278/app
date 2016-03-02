@@ -54,7 +54,7 @@ function cameraGo(elem){
 
     };
     alert("camera");
-    camera.getPicture(successCallback, errorCallback, options);
+    navigator.camera.getPicture(successCallback, errorCallback, options);
 
     function successCallback(imageURI){
         alert(imageURI);

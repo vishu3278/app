@@ -162,6 +162,10 @@
         <splash src="splash.png" density="port-ldpi"/>
         <splash src="splash.png" density="port-mdpi"/>
         <splash src="splash.png" density="port-xhdpi"/>
+        
+        <feature name="Camera">
+            <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+        </feature>
     </platform>
     <!--<platform name="ios">
         <allow-intent href="itms:*" />
