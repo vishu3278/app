@@ -6,6 +6,7 @@ function initdevice(){
 function onDeviceReady() {
     $("#model").html(device.model);
     $("#platform").html("Platform = "+device.platform+"-"+device.version+"<br/>Cordova = "+device.cordova);
+    alert(navigator.camera);
 }
 
 function onBatteryStatus(info) {
