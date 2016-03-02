@@ -14,28 +14,28 @@
 <body onload="initdevice()">
     <div class="ui container">
         <h1 class="ui top attached center aligned brown header">App</h1>
-        <h3 class="ui header">About Page</h3>
+        <h3 class="ui header center aligned">About Page</h3>
         <div class="ui grid">
             <div class="six wide column">
                 <img src="img/vishu456goa.jpg" class="ui small image" alt="vishu">
             </div>
             <div class="ten wide column">
-                <p>This is test application to test some cordova plugins.</p>
+                <p>This is test application to test some cordova plugins i.e. device, connection, battery, camera etc.</p>
                 <p><a href="index.html" class="ui circular basic blue icon button"><i class="home icon"></i></a></p>
             </div>
         </div>
 
-        <div class="ui two column grid">
-            <div class="column">
+        <div class="ui segments">
+            <div class="ui segment">
                 <a onclick="checkConnection(this)" class="ui basic purple fluid button">Check Connection</a>
             </div>
-            <div class="column"></div>
+            <div class="ui segment">
+                <button class="ui basic green fluid button" onclick="cameraGo(this)">Camera</button>
+                <hr>
+                <div class=""><img src="" id="capture" alt="captured image" width="300" height="400"></div>
+            </div>
+        </div>
 
-        </div>
-        <div class="ui segment">
-            <button class="ui basic green fluid button" onclick="cameraGo(this)">Camera</button>
-            <div class=""><img src="" id="capture" alt="captured image" width="300" height="400"></div>
-        </div>
     </div>
 
     <script type="text/javascript" src="jquery-2.1.4.min.js"></script>

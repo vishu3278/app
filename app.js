@@ -53,7 +53,7 @@ function cameraGo(elem){
         encodingType:'JPEG',
 
     };
-    
+    alert("camera");
     camera.getPicture(successCallback, errorCallback, options);
 
     function successCallback(imageURI){
