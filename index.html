@@ -20,14 +20,14 @@
         </div>
         
         <h5>This area will show device properties.</h5>
-        <h4 class="ui header" id="model"></h4>
-        <h5 class="ui header" id="platform"></h5>
+        <h4 class="ui header" id="model">Device Modal</h4>
+        <h5 class="ui header" id="platform">Cordova Version</h5>
             
         <div class="ui teal raised segment">
             <h4>This area will show battery and plugged status.</h4>
-            <div class="ui progress">
-                <div class="bar" id="batt">
-                    <div class="label" id="percent"></div> %</div>
+            <div class="ui indicating progress" id="batt" data-percent="">
+                <div class="bar"></div>
+                <div id="percent" class="label">Battery Status</div>
             </div>
             <div id="plug" class="ui label"> </div>
         </div>

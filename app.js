@@ -7,16 +7,17 @@ function onDeviceReady() {
     $("#model").html(device.model);
     $("#platform").html("Platform = "+device.platform+"-"+device.version+"<br/>Cordova = "+device.cordova);
 //    alert(navigator.camera);
+    alert("device ready");
 }
 
 function onBatteryStatus(info) {
     // Handle the online event
-    $("#batt").css({'width':info.level+'%'}).children("#percent").html(info.level);
+    $("#batt").data('percent':info.level}).children("#percent").html(info.level+"%");
     
     if(info.isPlugged == false){
-        $("#plug").html('Device is charging...');
+        $("#plug").html('Device is unplugged.');
     }else{
-        $("#plug").html('Device is unplugged.'));
+        $("#plug").html('Device is charging...'));
     }
 }
 
@@ -56,10 +57,22 @@ function cameraGo(elem){
     navigator.camera.getPicture(successCallback, errorCallback, options);
 
     function successCallback(imageURI){
-        $("#capuri").html(imageURI);
+        $("#capturi").html(imageURI);
         $("#capture").attr('src',imageURI);
     };
     function errorCallback (message) {
         alert(message);
+    }
+}
+
+function cameraClean(){
+    navigator.camera.cleanup(onSuccess, onFail);
+ 
+    function onSuccess() {
+        console.log("Camera cleanup success.")
+    }
+
+    function onFail(message) {
+        alert('Failed because: ' + message);
     }
 }

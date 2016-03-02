@@ -16,15 +16,18 @@
         <h3 class="ui header center aligned">About Page</h3>
         <img src="img/vishu456goa.jpg" class="ui small left floated image" alt="vishu">
         <p>This is test application to test some cordova plugins i.e. device, connection, battery, camera etc.</p>
-        <p><a href="index.html" class="ui basic blue button"><i class="home icon"></i></a></p>        
+        <p><a href="index.html" class="ui blue button"><i class="home icon"></i> Home</a></p>        
 
         <div class="ui segments">
             <div class="ui segment">
-                <button class="ui basic green fluid button" onclick="cameraGo(this)">Camera</button>
+                <button class="ui basic green fluid button" onclick="cameraGo(this)">Capture from Camera</button>
             </div>
             <div class="ui segment">
-                <div class=""><img src="" id="capture" alt="captured image" class="ui fluid image" ></div>
-                <p id="capuri"></p>
+                <img src="" id="capture" alt="captured image" class="ui fluid image" >
+                <p id="capturi"></p>
+            </div>
+            <div class="ui segment">
+                <a href="#" onclick="cameraClean()" class="ui fluid orange button">Clean Camera temp</a>
             </div>
         </div>
     </div>
