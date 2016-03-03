@@ -1,6 +1,7 @@
 function initdevice(){
     document.addEventListener("deviceready", onDeviceReady, false);
     window.addEventListener("batterystatus", onBatteryStatus, false);
+    alert("Body loaded");
 }
 
 function onDeviceReady() {
