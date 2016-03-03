@@ -2,7 +2,7 @@ function initdevice(){
     document.addEventListener("deviceready", onDeviceReady, false);
     window.addEventListener("batterystatus", onBatteryStatus, false);
 //    alert("Body loaded");
-    $('#batt').progress();
+    
 }
 
 function onDeviceReady() {
@@ -13,7 +13,9 @@ function onDeviceReady() {
 
 function onBatteryStatus(info) {
     // Handle the online event
-    $("#batt").prop('data-percent',info.level)//.children("#percent").html(info.level+"%");
+//    $("#batt").prop('data-percent',info.level).children("#percent").html(info.level+"%");
+    $('#batt').progress({percent:info.level});
+    $("#percent").html(info.level);
     
     if(info.isPlugged == false){
         $("#plug").html('Device is unplugged.');
@@ -49,8 +51,8 @@ function notic(elem){
 
 function cameraGo(elem){
     var options = {
-//        sourceType:Camera.PictureSourceType.CAMERA,
-        sourceType:Camera.PictureSourceType.PHOTOLIBRARY,
+        sourceType:Camera.PictureSourceType.CAMERA,
+//        sourceType:Camera.PictureSourceType.PHOTOLIBRARY,
 //        quality:50,
         destinationType:Camera.DestinationType.FILE_URI
     };
