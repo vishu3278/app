@@ -26,7 +26,7 @@
     <!-- Customize your app and platform with the preference element. -->
     <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
-    <preference name="fullscreen"                 value="true" />           <!-- all: hides the status bar at the top of the screen -->
+    <preference name="fullscreen"                 value="false" />           <!-- all: hides the status bar at the top of the screen -->
     <preference name="webviewbounce"              value="true" />           <!-- ios: control whether the screen 'bounces' when scrolled beyond the top -->
     <preference name="prerendered-icon"           value="true" />           <!-- ios: if icon is prerendered, iOS will not apply it's gloss to the app's icon on the user's home screen -->
     <preference name="stay-in-webview"            value="false" />          <!-- ios: external links should open in the default browser, 'true' would use the webview the app lives in -->
@@ -81,7 +81,7 @@
     -->
 
     <!-- Define app icon for each platform. -->
-    <icon src="icon.png" />
+    <icon src="icon2.png" />
     <!--<icon src="img/avatar.png" gap:platform="android" gap:qualifier="ldpi" />
     <icon src="img/avatar.png" gap:platform="android" gap:qualifier="mdpi" />
     <icon src="img/avatar.png" gap:platform="android" gap:qualifier="hdpi" />
@@ -148,8 +148,8 @@
         <preference name="SplashScreenWidth" value="480" /> <!-- defaults to "170" -->
         <preference name="SplashScreenHeight" value="800" /> <!-- defaults to "200" -->
         
-        <icon src="icon.png" density="ldpi" />
-        <icon src="icon.png" density="mdpi" />
+        <icon src="icon2.png" density="ldpi" />
+        <icon src="icon2.png" density="mdpi" />
         <icon src="icon.png" density="hdpi" />
         <icon src="icon.png" density="xhdpi" />
 

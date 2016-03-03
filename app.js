@@ -1,18 +1,19 @@
 function initdevice(){
     document.addEventListener("deviceready", onDeviceReady, false);
     window.addEventListener("batterystatus", onBatteryStatus, false);
-    alert("Body loaded");
+//    alert("Body loaded");
+    $('#batt').progress();
 }
 
 function onDeviceReady() {
     alert("device ready");
     $("#model").html(device.model);
-    $("#platform").html("Platform = "+device.platform+"-"+device.version+"<br/>Cordova = "+device.cordova);    
+    $("#platform").html("Platform = "+device.platform+"-"+device.version+"<br/>Cordova = "+device.cordova);
 }
 
 function onBatteryStatus(info) {
     // Handle the online event
-    $("#batt").prop('data-percent',info.level).children("#percent").html(info.level+"%");
+    $("#batt").prop('data-percent',info.level)//.children("#percent").html(info.level+"%");
     
     if(info.isPlugged == false){
         $("#plug").html('Device is unplugged.');
