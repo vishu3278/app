@@ -4,10 +4,9 @@ function initdevice(){
 }
 
 function onDeviceReady() {
-    $("#model").html(device.model);
-    $("#platform").html("Platform = "+device.platform+"-"+device.version+"<br/>Cordova = "+device.cordova);
-//    alert(navigator.camera);
     alert("device ready");
+    $("#model").html(device.model);
+    $("#platform").html("Platform = "+device.platform+"-"+device.version+"<br/>Cordova = "+device.cordova);    
 }
 
 function onBatteryStatus(info) {
@@ -17,7 +16,7 @@ function onBatteryStatus(info) {
     if(info.isPlugged == false){
         $("#plug").html('Device is unplugged.');
     }else{
-        $("#plug").html('Device is charging...'));
+        $("#plug").html('Device is charging...');
     }
 }
 
