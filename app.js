@@ -12,7 +12,7 @@ function onDeviceReady() {
 
 function onBatteryStatus(info) {
     // Handle the online event
-    $("#batt").data('percent':info.level}).children("#percent").html(info.level+"%");
+    $("#batt").data('percent',info.level).children("#percent").html(info.level+"%");
     
     if(info.isPlugged == false){
         $("#plug").html('Device is unplugged.');
