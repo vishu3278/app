@@ -79,3 +79,24 @@ function cameraClean(){
         alert('Failed because: ' + message);
     }
 }
+
+function rotate(){
+//    navigator.compass.getCurrentHeading(compassSuccess, compassError);
+    
+    var options = {
+        frequency: 1000
+    };
+    
+    function onSuccess(heading) {
+        /*var element = document.getElementById('heading');
+        element.innerHTML = 'Heading: ' + heading.magneticHeading;*/
+        $("#magnet").html(heading.magneticHeading);
+        $("#compass").css({'transform':'rotate('+heading.magneticHeading+')'});
+    };
+
+    function onError(compassError) {
+        alert('Compass error: ' + compassError.code);
+    };
+
+    var watchID = navigator.compass.watchHeading(onSuccess, onError, options);
+}

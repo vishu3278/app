@@ -13,35 +13,36 @@
 
 <body onload="initdevice()">
     <div class="ui container">
-        <h1 class="ui header">App</h1>
-        <h3 class="ui header">Home Page</h3>
-        <div class="ui segment">
+        <h1 class="ui center aligned header">App</h1>
+        <h3 class="ui center aligned header">Home Page</h3>
+        <div class="ui blue segment">
             <img src="img/avatar.jpg" class="ui right floated small image" alt="vishu">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, ut iste officiis ab veritatis alias quisquam asperiores incidunt accusamus beatae dolorem ducimus quaerat tempora corrupti, facilis illum natus, cupiditate excepturi.</p>
-            <p><a href="about.html" class="ui fluid violet button">About Page</a></p>
         </div>
         
-        <h5>This area will show device properties.</h5>
-        <h4 class="ui header" id="model">Device Modal</h4>
-        <h5 class="ui header" id="platform">Cordova Version</h5>
+        <div class="ui three buttons">
+            <a href="about.html" class="ui  button">About</a>
+            <a href="compass.html" class="ui  button">Compass</a>
+            <a href="#" class="ui  button">Link2</a>
+        </div>
+        
+        <div class="ui orange segment">
+            <h5>This area will show device properties.</h5>
+            <h4 class="ui header" id="model">Device Modal</h4>
+            <h5 class="ui header" id="platform">Cordova Version</h5>
+        </div>
             
-        <div class="ui teal raised segment">
-            <h4>This area will show battery and plugged status.</h4>
+        <div class="ui teal segment">
             <div class="ui indicating progress" id="batt" data-percent="">
                 <div class="bar"></div>
                 <div id="percent" class="label">Battery Status</div>
             </div>
             <div id="plug" class="ui label"> </div>
         </div>
-
-        <div class="ui two column grid">
-            <div class="column">
-                <a onclick="checkConnection()" class="ui basic fluid button">Connection</a>
-            </div>
-            <div class="column">
-                <a class="ui basic fluid orange button" onclick="notic(this)">Check</a>
-                <div id="conn"></div>
-            </div>
+        
+        <div class="ui violet segment">
+            <a class="ui basic fluid violet button" onclick="notic(this)">Check Connection</a>
+            <div id="conn" class="ui message"></div>        
         </div>
         
     </div>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>App</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="semantic.min.js"></script>
+</head>
+
+<body onload="rotate()">
+    <div class="ui container">
+        <h1 class="ui center aligned header">App</h1>
+        <h3 class="ui header center aligned">Compass</h3>
+        
+        <div class="ui segment">
+            <p>This is test application to test some cordova plugins i.e. device, connection, battery, camera etc.</p>
+            <div id="magnet" class="ui label"></div>
+            <img id="compass" src="img/simple_compass.jpg" alt="compass" class="ui image " >
+        </div>
+        
+
+        <div class="ui segments">
+            <div class="ui segment">
+                <button class="ui basic green fluid button" onclick="cameraGo(this)">Capture from Camera</button>
+            </div>
+            <div class="ui segment">
+                <img src="" id="capture" alt="captured image" class="ui fluid image" >
+                <p id="capturi"></p>
+            </div>
+        </div>
+    </div>
+
+    
+    <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
