@@ -47,6 +47,7 @@ function notic(elem){
         elem = $(elem);
     
     elem.html(conn);
+    $("#conn").html(conn);
 }
 
 function cameraGo(elem){

@@ -13,17 +13,17 @@
 
 <body onload="initdevice()">
     <div class="ui container">
-        <h1 class="ui center aligned header">App</h1>
-        <h3 class="ui center aligned header">Home Page</h3>
+        <h1 class="ui center aligned blue block header">App
+        <div class="sub header">Home Page</div></h1>
         <div class="ui blue segment">
             <img src="img/avatar.jpg" class="ui right floated small image" alt="vishu">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, ut iste officiis ab veritatis alias quisquam asperiores incidunt accusamus beatae dolorem ducimus quaerat tempora corrupti, facilis illum natus, cupiditate excepturi.</p>
+            <p>Test page to check device properties, battery status, device connection.</p>
         </div>
         
         <div class="ui three buttons">
-            <a href="about.html" class="ui  button">About</a>
-            <a href="compass.html" class="ui  button">Compass</a>
-            <a href="#" class="ui  button">Link2</a>
+            <a href="about.html" class="ui green button">Camera</a>
+            <a href="compass.html" class="ui red button">Compass</a>
+            <a href="#" class="ui button">Link2</a>
         </div>
         
         <div class="ui orange segment">
@@ -33,11 +33,13 @@
         </div>
             
         <div class="ui teal segment">
-            <div class="ui indicating progress" id="batt" data-percent="">
-                <div class="bar"></div>
+            <div class="ui indicating small progress" id="batt" data-percent="">
+                <div class="bar">
+                    <div class="progress"></div>
+                </div>
                 <div id="percent" class="label">Battery Status</div>
             </div>
-            <div id="plug" class="ui label"> </div>
+            <div id="plug" class="ui pointing basic label"> </div>
         </div>
         
         <div class="ui violet segment">

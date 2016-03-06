@@ -14,15 +14,16 @@
 
 <body onload="initdevice()">
     <div class="ui container">
-        <h1 class="ui top attached center aligned brown header">App</h1>
-        <h3 class="ui header center aligned">About Page</h3>
+        <h1 class="ui center aligned green block header">App
+        <div class="sub header ">Camera</div></h1>
         <img src="img/vishu456goa.jpg" class="ui small left floated image" alt="vishu">
         <p>This is test application to test some cordova plugins i.e. device, connection, battery, camera etc.</p>
         <p><a href="index.html" class="ui blue button"><i class="home icon"></i> Home</a></p>        
 
         <div class="ui segments">
             <div class="ui segment">
-                <button class="ui basic green fluid button" onclick="cameraGo(this)">Capture from Camera</button>
+                <button class="ui basic green fluid button" onclick="cameraGo(this)">
+                    <i class="icon photo"></i> Capture from Camera</button>
             </div>
             <div class="ui segment">
                 <img src="" id="capture" alt="captured image" class="ui fluid image" >
