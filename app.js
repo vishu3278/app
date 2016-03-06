@@ -91,7 +91,7 @@ function rotate(){
         /*var element = document.getElementById('heading');
         element.innerHTML = 'Heading: ' + heading.magneticHeading;*/
         $("#magnet").html(heading.magneticHeading);
-        $("#compass").css({'transform':'rotate('+heading.magneticHeading+')'});
+        $("#compass").css({'transform':'rotate('+heading.magneticHeading+'deg)'});
     };
 
     function onError(compassError) {
