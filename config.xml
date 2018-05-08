@@ -3,7 +3,7 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.app"
+        id        = "com.wowitsolutions.app"
         version   = "1.0.0">
 
     <name>App demo</name>
@@ -12,7 +12,7 @@
         Demo Application that responds to various cordova plugins event.
     </description>
 
-    <author href="http://phonegap.com" email="vishu3278@gmail.com">
+    <author href="http://wowitsolutions.com" email="vishu3278@gmail.com">
         WoW Team
     </author>
 
@@ -47,32 +47,25 @@
     <!-- Plugins -->
 
     <!-- Core plugins -->
-    <!-- <gap:plugin name="org.apache.cordova.splashscreen" /> -->
-    <gap:plugin name="org.apache.cordova.battery-status" />
-    <gap:plugin name="org.apache.cordova.device" />
-    <gap:plugin name="org.apache.cordova.dialogs" />
-    <gap:plugin name="org.apache.cordova.network-information" />
-    <gap:plugin name="org.apache.cordova.file" />
-    <gap:plugin name="org.apache.cordova.camera" />
-    <gap:plugin name="org.apache.cordova.media-capture" />
-    <gap:plugin name="org.apache.cordova.device-orientation" />
+    <plugin name="cordova-plugin-battery-status" />
+    <plugin name="cordova-plugin-camera" />
+    <plugin name="cordova-plugin-media-capture" />
+    <plugin name="cordova-plugin-console" />
+    <plugin name="cordova-plugin-contacts" />
+    <plugin name="cordova-plugin-device" />
+    <!-- <plugin name="cordova-plugin-device-motion" />
+    <plugin name="cordova-plugin-device-orientation" /> -->
+    <plugin name="cordova-plugin-dialogs" />
+    <plugin name="cordova-plugin-file" spec="~4.3.3" />
+    <!-- <plugin name="cordova-plugin-file-transfer" /> -->
+    <plugin name="cordova-plugin-geolocation" version="2.1.0" />
+    <plugin name="cordova-plugin-globalization" />
+    <plugin name="cordova-plugin-inappbrowser" />
+    <plugin name="cordova-plugin-media" />
+    <plugin name="cordova-plugin-network-information" />
+    <plugin name="cordova-plugin-splashscreen" />
+    <plugin name="cordova-plugin-vibration" />
     
-    <gap:plugin name="org.apache.cordova.contacts" />
-    <gap:plugin name="org.apache.cordova.console" />
-    
-    <gap:plugin name="org.apache.cordova.device-motion" />
-    
-    <gap:plugin name="org.apache.cordova.file-transfer" />
-    <gap:plugin name="org.apache.cordova.geolocation" />
-    <gap:plugin name="org.apache.cordova.globalization" />
-    <gap:plugin name="org.apache.cordova.inappbrowser" />
-    <gap:plugin name="org.apache.cordova.media" />
-    
-    
-    <gap:plugin name="org.apache.cordova.vibration" />
-    
-    
-
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
     <!--
