@@ -1,55 +1,20 @@
 <!doctype html>
 <html>
 <head>
-    <title>App</title>
+    <title>The Financial World</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="semantic.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script type="text/javascript" src="cordova.js"></script>
+    
     <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="semantic.min.js"></script>
 </head>
 
 <body onload="initdevice()">
-    <div class="ui container">
-        <h1 class="ui center aligned blue block header">App
-        <div class="sub header">Home Page</div></h1>
-        <div class="ui blue segment">
-            <img src="img/avatar.jpg" class="ui right floated small image" alt="vishu">
-            <p>Test page to check device properties, battery status, device connection.</p>
-        </div>
-        
-        <div class="ui three buttons">
-            <a href="about.html" class="ui green button">Camera</a>
-            <a href="compass.html" class="ui red button">Compass</a>
-            <a href="#" class="ui button">Link2</a>
-        </div>
-        
-        <div class="ui orange segment">
-            <h5>This area will show device properties.</h5>
-            <h4 class="ui header" id="model">Device Modal</h4>
-            <h5 class="ui header" id="platform">Cordova Version</h5>
-        </div>
-            
-        <div class="ui teal segment">
-            <div class="ui indicating small progress" id="batt" data-percent="">
-                <div class="bar">
-                    <div class="progress"></div>
-                </div>
-                <div id="percent" class="label">Battery Status</div>
-            </div>
-            <div id="plug" class="ui pointing basic label"> </div>
-        </div>
-        
-        <div class="ui violet segment">
-            <a class="ui basic fluid violet button" onclick="notic(this)">Check Connection</a>
-            <div id="conn" class="ui message"></div>        
-        </div>
-        
-    </div>
     
     <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
 </body>
 
 </html>
