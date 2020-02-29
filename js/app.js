@@ -32,14 +32,27 @@ function scanCard(arguments) {
     alert("scanning initiated");
     cordova.plugins.barcodeScanner.scan(
         function(result) {
-            alert("We got a barcode\n" +
-                "Result: " + result.text + "\n" +
-                "Format: " + result.format + "\n" +
-                "Cancelled: " + result.cancelled);
+            if(!result.cancelled){
+                if(result.format == "QR_CODE"){
+                    navigator.notification.prompt("Please enter name of data",  function(input){
+                        var name = input.input1;
+                        var value = result.text;
+
+                        var data = localStorage.getItem("LocalData");
+                        console.log(data);
+                        data = JSON.parse(data);
+                        data[data.length] = [name, value];
+
+                        localStorage.setItem("LocalData", JSON.stringify(data));
+
+                        alert("Done");
+                    });
+                }
+            }
         },
         function(error) {
             alert("Scanning failed: " + error);
-        }, {
+        } /*{
             preferFrontCamera: true, // iOS and Android
             showFlipCameraButton: true, // iOS and Android
             showTorchButton: true, // iOS and Android
@@ -49,7 +62,7 @@ function scanCard(arguments) {
             resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
             formats: "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
             orientation: "landscape" // Android only (portrait|landscape), default unset so it rotates with the device
-        }
+        }*/
     );
 }
 
