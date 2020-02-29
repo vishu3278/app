@@ -1,7 +1,6 @@
 function initdevice() {
     document.addEventListener("deviceready", onDeviceReady, false);
     // window.addEventListener("batterystatus", onBatteryStatus, false);
-    //    alert("Body loaded");
 
 }
 
@@ -28,6 +27,13 @@ function checkConnection() {
     return (states[networkState]);
 }
 
+function getHtml (arguments) {
+    $.get(arguments,function (data) {
+        $("#page").html(data);
+        rotate();
+    })
+}
+
 var scanOptions = {
     "preferFrontCamera": true, // iOS and Android
     "showFlipCameraButton": true, // iOS and Android
@@ -37,7 +43,7 @@ var scanOptions = {
 };
 
 function scanCard(arguments) {
-    alert("scanning initiated");
+    alert(cordova.plugins.barcodeScanner);
     cordova.plugins.barcodeScanner.scan(
         function(result) {
             alert(JSON.stringify(result));
