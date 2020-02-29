@@ -1,6 +1,6 @@
 function initdevice() {
     document.addEventListener("deviceready", onDeviceReady, false);
-    window.addEventListener("batterystatus", onBatteryStatus, false);
+    // window.addEventListener("batterystatus", onBatteryStatus, false);
     //    alert("Body loaded");
 
 }
@@ -29,6 +29,7 @@ function checkConnection() {
 }
 
 function scanCard(arguments) {
+    alert("scanning initiated");
     cordova.plugins.barcodeScanner.scan(
         function(result) {
             alert("We got a barcode\n" +
