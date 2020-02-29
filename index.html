@@ -1,18 +1,45 @@
 <!doctype html>
 <html>
+
 <head>
     <title>DR Solution</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    
-    <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
-    
+    <link rel="stylesheet" href="css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 </head>
 
 <body onload="initdevice()">
-    <script type="text/javascript" src="app.js"></script>
+    <section class="hero is-bold is-danger">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Dr Solution
+                </h1>
+                <h2 class="subtitle">
+                    Scan card
+                </h2>
+            </div>
+        </div>
+    </section>
+    <div class="container is-fluid">
+    	<div id="networkError" class="notification is-warning">
+
+    	</div>
+        <div class="card">
+            <div class="card-content">
+                <p>Scan QR code using this app.</p>
+                <!-- <button class="button is-primary">Scan</button> -->
+            </div>
+            <div class="card-footer">
+            	<a onclick="scanCard()" class="card-footer-item">Scan</a>
+            	<a href="compass.html" class="card-footer-item">Compass</a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
 </body>
 
