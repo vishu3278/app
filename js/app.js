@@ -1,12 +1,11 @@
 function initdevice() {
     document.addEventListener("deviceready", onDeviceReady, false);
-    // window.addEventListener("batterystatus", onBatteryStatus, false);
-
 }
 
 function onDeviceReady() {
     alert("device ready");
     checkConnection();
+    scanCard();
 }
 
 function checkConnection() {
@@ -43,7 +42,8 @@ var scanOptions = {
 };
 
 function scanCard(arguments) {
-    alert(cordova.plugins.barcodeScanner, "initiate");
+    alert("initiate");
+    // console.log(cordova.plugins.barcodeScanner);
     cordova.plugins.barcodeScanner.scan(
         function(result) {
             alert(JSON.stringify(result));
