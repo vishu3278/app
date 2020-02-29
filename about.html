@@ -1,41 +1,19 @@
-<!doctype html>
-<html>
-
-<head>
-    <title>App</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-    
-    <link rel="stylesheet" type="text/css" href="style.css">
-    
-    <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
-    
-</head>
-
-<body onload="initdevice()">
-    <div class="ui container">
-        <h1 class="ui center aligned green block header">App
-        <div class="sub header ">Camera</div></h1>
-        <img src="img/vishu456goa.jpg" class="ui small left floated image" alt="vishu">
-        <p>This is test application to test some cordova plugins i.e. device, connection, battery, camera etc.</p>
-        <p><a href="index.html" class="ui blue button"><i class="home icon"></i> Home</a></p>        
-
-        <div class="ui segments">
-            <div class="ui segment">
-                <button class="ui basic green fluid button" onclick="cameraGo(this)">
-                    <i class="icon photo"></i> Capture from Camera</button>
-            </div>
-            <div class="ui segment">
-                <img src="" id="capture" alt="captured image" class="ui fluid image" >
-                <p id="capturi"></p>
-            </div>
-            <div class="ui segment">
-                <a href="#" onclick="cameraClean()" class="ui fluid orange button">Clean Camera temp</a>
-            </div>
+<div class="container is-fluid">
+    <h1 class="title">Camera App</h1>
+    <img src="img/vishu456goa.jpg" class="ui small left floated image" alt="vishu">
+    <p>This is test application to test some cordova plugins i.e. device, connection, battery, camera etc.</p>
+    <p><a href="index.html" class="ui blue button"><i class="home icon"></i> Home</a></p>
+    <div class="card">
+        <div class="ui segment">
+            <button class="button is-primary" onclick="cameraGo(this)">
+                <i class="icon photo"></i> Capture from Camera</button>
+        </div>
+        <div class="ui segment">
+            <img src="" id="capture" alt="captured image" class="ui fluid image">
+            <p id="capturi"></p>
+        </div>
+        <div class="ui segment">
+            <a href="#" onclick="cameraClean()" class="ui fluid orange button">Clean Camera temp</a>
         </div>
     </div>
-
-    <script type="text/javascript" src="app.js"></script>
-</body>
-
-</html>
+</div>
