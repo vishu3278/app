@@ -43,7 +43,7 @@ var scanOptions = {
 };
 
 function scanCard(arguments) {
-    alert(cordova.plugins.barcodeScanner);
+    alert(cordova.barcodeScanner, "initiate");
     cordova.plugins.barcodeScanner.scan(
         function(result) {
             alert(JSON.stringify(result));
