@@ -54,7 +54,7 @@
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
     
-        <plugin name="cordova-plugin-qr-barcode-scanner" version="~0.7.4" />
+        <plugin name="cordova-plugin-qr-barcode-scanner" version="~8.0" />
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
