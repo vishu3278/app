@@ -28,41 +28,36 @@ function checkConnection() {
     return (states[networkState]);
 }
 
+var scanOptions = {
+    "preferFrontCamera": true, // iOS and Android
+    "showFlipCameraButton": true, // iOS and Android
+    "prompt": "Place a barcode inside the scan area", // supported on Android only
+    "formats": "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
+    "orientation": "landscape"
+};
+
 function scanCard(arguments) {
     alert("scanning initiated");
     cordova.plugins.barcodeScanner.scan(
         function(result) {
-            if(!result.cancelled){
-                if(result.format == "QR_CODE"){
-                    navigator.notification.prompt("Please enter name of data",  function(input){
-                        var name = input.input1;
-                        var value = result.text;
-
-                        var data = localStorage.getItem("LocalData");
-                        console.log(data);
-                        data = JSON.parse(data);
-                        data[data.length] = [name, value];
-
-                        localStorage.setItem("LocalData", JSON.stringify(data));
-
-                        alert("Done");
-                    });
+            alert(JSON.stringify(result));
+            if (!result.cancelled) {
+                // In this case we only want to process QR Codes
+                if (result.format == "QR_CODE") {
+                    var value = result.text;
+                    // This is the retrieved content of the qr code
+                    console.log(value);
+                } else {
+                    alert("Sorry, only qr codes this time ;)");
                 }
+            } else {
+                alert("The user has dismissed the scan");
             }
         },
         function(error) {
             alert("Scanning failed: " + error);
-        } /*{
-            preferFrontCamera: true, // iOS and Android
-            showFlipCameraButton: true, // iOS and Android
-            showTorchButton: true, // iOS and Android
-            torchOn: true, // Android, launch with the torch switched on (if available)
-            saveHistory: true, // Android, save scan history (default false)
-            prompt: "Place a barcode inside the scan area", // Android
-            resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
-            formats: "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
-            orientation: "landscape" // Android only (portrait|landscape), default unset so it rotates with the device
-        }*/
+        },
+        scanOptions
     );
 }
 
