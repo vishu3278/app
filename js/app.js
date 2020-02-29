@@ -5,7 +5,16 @@ function initdevice() {
 function onDeviceReady() {
     alert("device ready");
     checkConnection();
-    scanCard();
+    document.addEventListener("offline", onOffline, false);
+    document.addEventListener("online", onOnline, false);
+}
+
+function onOffline() {
+    navigator.notification.alert("You lost connection!");
+}
+
+function onOnline() {
+    navigator.vibrate([200, 400, 200]);
 }
 
 function checkConnection() {
@@ -23,11 +32,16 @@ function checkConnection() {
 
     $("#networkError").html(states[networkState]);
     // alert('Connection type: ' + states[networkState]);
+    if (states[networkState] !== Connection.NONE) {
+        navigator.vibrate([200, 400, 200]);
+    } else {
+        navigator.notification.alert("Connect to internet to proceed!");
+    }
     return (states[networkState]);
 }
 
-function getHtml (arguments) {
-    $.get(arguments,function (data) {
+function getHtml(arguments) {
+    $.get(arguments, function(data) {
         $("#page").html(data);
         rotate();
     })
