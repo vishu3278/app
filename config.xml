@@ -23,7 +23,7 @@
     -->
     <content src="index.html"></content>
     <preference name="permissions" value="none"/>
-        <preference name="android-minSdkVersion" value="24" />
+        <preference name="android-minSdkVersion" value="21" />
         <preference name="KeepRunning" value="false" />
 
     <!-- Customize your app and platform with the preference element. -->
