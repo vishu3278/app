@@ -21,8 +21,7 @@
         checkConnection();
         document.addEventListener("offline", onOffline, false);
         document.addEventListener("online", onOnline, false);
-        app.permissions = cordova.plugins.permissions;
-        alert(app.permissions);
+        $("#result").html(window.sessionStorage.getItem('QRCODE'));
     }
 
     function onOffline() {
@@ -31,24 +30,7 @@
 
     function onOnline() {
         navigator.vibrate([200, 400, 200]);
-        navigator.notification.alert("You're connected");
-    }
-
-    function camPerm() {
-        app.permissions.checkPermission("android.permission.CAMERA", function(status) {
-            alert('success checking permission');
-            alert('Has CAMERA:', status.hasPermission);
-            if (!status.hasPermission) {
-                app.permissions.requestPermission("android.permission.CAMERA", function(status) {
-                    alert('success requesting CAMERA permission');
-                    cameraGo();
-                }, function(err) {
-                    alert('failed to set permission');
-                });
-            }
-        }, function(err) {
-            alert(err);
-        });
+        // navigator.notification.alert("You're connected");
     }
 
     function checkConnection() {
@@ -64,7 +46,7 @@
         states[Connection.CELL] = 'Cell generic connection';
         states[Connection.NONE] = 'No network connection';
 
-        $("#networkError").html(states[networkState]);
+        // $("#networkError").html(states[networkState]);
         // alert('Connection type: ' + states[networkState]);
         if (states[networkState] !== Connection.NONE) {
             navigator.vibrate([200, 400, 200]);
@@ -76,7 +58,7 @@
 
     var scanOptions = {
         'prompt_message': 'Scan a Code', // Change the info message. A blank message ('') will show a default message
-        'orientation_locked': true, // Lock the orientation screen
+        'orientation_locked': false, // Lock the orientation screen
         'camera_id': 0, // Choose the camera source
         'beep_enabled': true, // Enables a beep after the scan
         'scan_type': 'normal', // Types of scan mode: normal = default black with white background / inverted = white bars on dark background / mixed = normal and inverted modes
@@ -89,13 +71,22 @@
     }
 
     function scanQR(arguments) {
-        alert("initiate");
+        // alert("initiate");
         window.plugins.zxingPlugin.scan(scanOptions, onSuccess, onFailure);
-        function onSuccess (result) {
-        	navigator.notification.alert(result);
+
+        function onSuccess(result) {
+            navigator.vibrate([300, 400, 200, 100, 100]);
+            // navigator.notification.alert(result);
+            $("#result").html(result);
+            window.sessionStorage.setItem('QRCODE', result);
+            /*var xmlDoc = $.parseXML(result);
+            var $xml = $(xmlDoc);
+            var $Name = $xml.find('name').attr('first');
+            $('span').html($Name);*/
         }
-        function onFailure (err) {
-        	navigator.notification.alert(err);
+
+        function onFailure(err) {
+            navigator.notification.alert(err);
         }
     }
 
@@ -138,26 +129,19 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    Dr Solution
+                    DR Solution
                 </h1>
                 <h2 class="subtitle">
-                    Scan card
+                    Scan QR Code
                 </h2>
             </div>
         </div>
     </section>
     <div class="container is-fluid">
-        <div id="networkError" class="notification is-warning">
-        </div>
         <div class="card">
             <div class="card-content">
-                <p>Scan QR code using this app.</p>
-                <!-- <button class="button is-primary">Scan</button> -->
-            </div>
-            <div>
+                <div id="result"></div>
                 <button type="button" onclick="scanQR()" class="button">Scan</button>
-                <button type="button" onclick="alert('Compass')" class="button">Compass</button>
-                <button type="button" onclick="cameraGo()" class="button">Camera</button>
             </div>
         </div>
     </div>
