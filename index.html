@@ -110,7 +110,7 @@
 
     function scanQR(arguments) {
         alert("initiate");
-        // console.log(cordova.plugins.barcodeScanner);
+        alert(cordova.plugins.barcodeScanner);
         cordova.plugins.barcodeScanner.scan(
             function(result) {
                 alert(JSON.stringify(result));
