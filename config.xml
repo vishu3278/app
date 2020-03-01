@@ -6,7 +6,7 @@
         id        = "com.drsolution.scanapp"
         version   = "1.0.0">
 
-    <name>QR demo</name>
+    <name>QR Demo</name>
 
     <description>
         Demo Application for QR code scanner.
@@ -23,7 +23,7 @@
     -->
     <content src="index.html"></content>
     <preference name="permissions" value="none"/>
-        <preference name="android-minSdkVersion" value="20" />
+        <preference name="android-minSdkVersion" value="24" />
         <preference name="KeepRunning" value="false" />
 
     <!-- Customize your app and platform with the preference element. -->
@@ -53,8 +53,8 @@
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
     
-        <!-- <plugin name="cordova-plugin-qr-barcode-scanner" version="~8.0" /> -->
-        <plugin name="phonegap-plugin-barcodescanner" version="~8.0" />
+        <plugin name="cordova-plugin-qr-barcode-scanner" version="~8.0" />
+        <!-- <plugin name="phonegap-plugin-barcodescanner" version="~8.0" /> -->
         <!-- <plugin name="cordova-plugin-qrscanner" version="~2.5" /> -->
 
     <!-- Define app icon for each platform. -->
