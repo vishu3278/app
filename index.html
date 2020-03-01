@@ -87,7 +87,7 @@
         }
     }
 
-    function scanQR(argument) {
+    /*function scanQR(argument) {
         window.QRScanner.scan(displayContents);
 
         function displayContents(err, text) {
@@ -98,9 +98,9 @@
                 alert(text);
             }
         }
-    }
+    }*/
 
-    /*var scanOptions = {
+    var scanOptions = {
         "preferFrontCamera": true, // iOS and Android
         "showFlipCameraButton": true, // iOS and Android
         "prompt": "Place a barcode inside the scan area", // supported on Android only
@@ -108,7 +108,7 @@
         "orientation": "landscape"
     };
 
-    function scanCard(arguments) {
+    function scanQR(arguments) {
         alert("initiate");
         // console.log(cordova.plugins.barcodeScanner);
         cordova.plugins.barcodeScanner.scan(
@@ -132,7 +132,7 @@
             },
             scanOptions
         );
-    }*/
+    }
 
     function cameraGo(elem) {
         var options = {
@@ -210,10 +210,10 @@
                 <p>Scan QR code using this app.</p>
                 <!-- <button class="button is-primary">Scan</button> -->
             </div>
-            <div class="card-footer">
-                <a onclick="scanQR()" class="card-footer-item">Scan</a>
-                <a onclick="alert('Compass')" class="card-footer-item">Compass</a>
-                <a onclick="cameraGo()" class="card-footer-item">Camera</a>
+            <div >
+                <button type="button" onclick="scanQR()" class="button">Scan</button>
+                <button type="button" onclick="alert('Compass')" class="button">Compass</button>
+                <button type="button" onclick="cameraGo()" class="button">Camera</button>
             </div>
         </div>
     </div>
