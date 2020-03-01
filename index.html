@@ -17,17 +17,12 @@
     }
 
     function onDeviceReady() {
-        alert("device ready");
+        navigator.notification.alert("device ready");
         checkConnection();
         document.addEventListener("offline", onOffline, false);
         document.addEventListener("online", onOnline, false);
-        // scannerPrepare();
         app.permissions = cordova.plugins.permissions;
         alert(app.permissions);
-        /*var permissions = cordova.plugins.permissions;
-        permissions.checkPermission(permission, successCallback, errorCallback);
-        permissions.requestPermission(permission, successCallback, errorCallback);
-        permissions.requestPermissions(permissions, successCallback, errorCallback);*/
     }
 
     function onOffline() {
@@ -79,39 +74,18 @@
         return (states[networkState]);
     }
 
-    function getHtml(arguments) {
-        $.get(arguments, function(data) {
-            $("#page").html(data);
-            rotate();
-        })
-    }
+    var scanOptions = {
+        "preferFrontCamera": true, // iOS and Android
+        "showFlipCameraButton": true, // iOS and Android
+        "prompt": "Place a barcode inside the scan area", // supported on Android only
+        "formats": "QR_CODE", // default: all but PDF_417 and RSS_EXPANDED
+        "orientation": "landscape"
+    };
 
-    function scannerPrepare() {
-        window.QRScanner.prepare(onDone); // show the prompt
-
-        function onDone(err, status) {
-            if (err) {
-                // here we can handle errors and clean up any loose ends.
-                console.error(err);
-            }
-            if (status.authorized) {
-                // W00t, you have camera access and the scanner is initialized.
-                QRscanner.show(); //should feel very fast.
-            } else if (status.denied) {
-                // The video preview will remain black, and scanning is disabled. We can
-                // try to ask the user to change their mind, but we'll have to send them
-                // to their device settings with `QRScanner.openSettings()`.
-            } else {
-                // we didn't get permission, but we didn't get permanently denied. (On
-                // Android, a denial isn't permanent unless the user checks the "Don't
-                // ask again" box.) We can ask again at the next relevant opportunity.
-
-            }
-        }
-    }
-
-    /*function scanQR(argument) {
-        window.QRScanner.scan(displayContents);
+    function scanQR(arguments) {
+        alert("initiate");
+        // permissions.requestPermission(permissions.CAMERA, success, error);
+        QRScanner.scan(displayContents);
 
         function displayContents(err, text) {
             if (err) {
@@ -121,53 +95,12 @@
                 alert(text);
             }
         }
-    }*/
 
-    var scanOptions = {
-        "preferFrontCamera": true, // iOS and Android
-        "showFlipCameraButton": true, // iOS and Android
-        "prompt": "Place a barcode inside the scan area", // supported on Android only
-        "formats": "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
-        "orientation": "landscape"
-    };
-
-    function scanQR(arguments) {
-        alert("initiate");
-        camPerm();
-        // permissions.requestPermission(permissions.CAMERA, success, error);
-
-        function error() {
-            console.warn('Camera permission is not turned on');
-        }
-
-        function success(status) {
-            if (!status.hasPermission) error();
-            alert(cordova.plugins.barcodeScanner);
-            /*cordova.plugins.barcodeScanner.scan(
-                function(result) {
-                    alert(JSON.stringify(result));
-                    if (!result.cancelled) {
-                        // In this case we only want to process QR Codes
-                        if (result.format == "QR_CODE") {
-                            var value = result.text;
-                            // This is the retrieved content of the qr code
-                            alert(value);
-                        } else {
-                            alert("Sorry, only qr codes this time ;)");
-                        }
-                    } else {
-                        alert("The user has dismissed the scan");
-                    }
-                },
-                function(error) {
-                    alert("Scanning failed: " + error);
-                },
-                scanOptions
-            );*/
-        }
+        // Make the webview transparent so the video preview is visible behind it.
+        QRScanner.show();
     }
 
-    function cameraGo(elem) {
+    function cameraGo() {
         var options = {
             sourceType: Camera.PictureSourceType.CAMERA,
             //        sourceType:Camera.PictureSourceType.PHOTOLIBRARY,
@@ -197,27 +130,6 @@
         function onFail(message) {
             alert('Failed because: ' + message);
         }
-    }
-
-    function rotate() {
-        //    navigator.compass.getCurrentHeading(compassSuccess, compassError);
-
-        var options = {
-            frequency: 1000
-        };
-
-        function onSuccess(heading) {
-            /*var element = document.getElementById('heading');
-            element.innerHTML = 'Heading: ' + heading.magneticHeading;*/
-            $("#magnet").html(heading.magneticHeading);
-            $("#compass").css({ 'transform': 'rotate(' + heading.magneticHeading + 'deg)' });
-        };
-
-        function onError(compassError) {
-            alert('Compass error: ' + compassError.code);
-        };
-
-        var watchID = navigator.compass.watchHeading(onSuccess, onError, options);
     }
     </script>
 </head>
