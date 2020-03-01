@@ -11,37 +11,6 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <!-- <script type="text/javascript" src="js/app.js"></script> -->
-</head>
-
-<body onload="initdevice()">
-    <section class="hero is-bold is-danger">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">
-                    Dr Solution
-                </h1>
-                <h2 class="subtitle">
-                    Scan card
-                </h2>
-            </div>
-        </div>
-    </section>
-    <div class="container is-fluid">
-        <div id="networkError" class="notification is-warning">
-        </div>
-        <div class="card">
-            <div class="card-content">
-                <p>Scan QR code using this app.</p>
-                <!-- <button class="button is-primary">Scan</button> -->
-            </div>
-            <div class="card-footer">
-                <a onclick="scanQR()" class="card-footer-item">Scan</a>
-                <a onclick="alert('Compass')" class="card-footer-item">Compass</a>
-                <a onclick="cameraGo()" class="card-footer-item">Camera</a>
-            </div>
-        </div>
-    </div>
-    <div id="page"></div>
     <script type="text/javascript">
     function initdevice() {
         document.addEventListener("deviceready", onDeviceReady, false);
@@ -218,6 +187,37 @@
         var watchID = navigator.compass.watchHeading(onSuccess, onError, options);
     }
     </script>
+</head>
+
+<body onload="initdevice()">
+    <section class="hero is-bold is-danger">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Dr Solution
+                </h1>
+                <h2 class="subtitle">
+                    Scan card
+                </h2>
+            </div>
+        </div>
+    </section>
+    <div class="container is-fluid">
+        <div id="networkError" class="notification is-warning">
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <p>Scan QR code using this app.</p>
+                <!-- <button class="button is-primary">Scan</button> -->
+            </div>
+            <div class="card-footer">
+                <a onclick="scanQR()" class="card-footer-item">Scan</a>
+                <a onclick="alert('Compass')" class="card-footer-item">Compass</a>
+                <a onclick="cameraGo()" class="card-footer-item">Camera</a>
+            </div>
+        </div>
+    </div>
+    <div id="page"></div>
     <script type="text/javascript" src="cordova.js"></script>
 </body>
 
