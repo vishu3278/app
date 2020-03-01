@@ -6,10 +6,10 @@
         id        = "com.drsolution.scanapp"
         version   = "1.0.0">
 
-    <name>App demo</name>
+    <name>QR demo</name>
 
     <description>
-        Demo Application that responds to various cordova plugins event.
+        Demo Application for QR code scanner.
     </description>
 
     <author href="http://wowitsolutions.com" email="vishu3278@gmail.com">
@@ -21,8 +21,10 @@
         following tag to your config.xml; you will still have the INTERNET
         permission on your app, which PhoneGap requires.
     -->
-    
+    <content src="index.html"></content>
     <preference name="permissions" value="none"/>
+        <preference name="android-minSdkVersion" value="21" />
+        <preference name="KeepRunning" value="false" />
 
     <!-- Customize your app and platform with the preference element. -->
     <preference name="orientation" value="portrait" />        <!-- all: default means both landscape and portrait are enabled -->
