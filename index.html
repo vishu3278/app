@@ -75,29 +75,28 @@
     }
 
     var scanOptions = {
-        "preferFrontCamera": true, // iOS and Android
-        "showFlipCameraButton": true, // iOS and Android
-        "prompt": "Place a barcode inside the scan area", // supported on Android only
-        "formats": "QR_CODE", // default: all but PDF_417 and RSS_EXPANDED
-        "orientation": "landscape"
-    };
+        'prompt_message': 'Scan a Code', // Change the info message. A blank message ('') will show a default message
+        'orientation_locked': true, // Lock the orientation screen
+        'camera_id': 0, // Choose the camera source
+        'beep_enabled': true, // Enables a beep after the scan
+        'scan_type': 'normal', // Types of scan mode: normal = default black with white background / inverted = white bars on dark background / mixed = normal and inverted modes
+        'barcode_formats': [
+            'QR_CODE',
+            'CODE_39',
+            'CODE_128'
+        ], // Put a list of formats that the scanner will find. A blank list ([]) will enable scan of all barcode types
+        'extras': {} // Additional extra parameters. See [ZXing Journey Apps][1] IntentIntegrator and Intents for more details
+    }
 
     function scanQR(arguments) {
         alert("initiate");
-        // permissions.requestPermission(permissions.CAMERA, success, error);
-        QRScanner.scan(displayContents);
-
-        function displayContents(err, text) {
-            if (err) {
-                // an error occurred, or the scan was canceled (error code `6`)
-            } else {
-                // The scan completed, display the contents of the QR code:
-                alert(text);
-            }
+        window.plugins.zxingPlugin.scan(scanOptions, onSuccess, onFailure);
+        function onSuccess (result) {
+        	navigator.notification.alert(result);
         }
-
-        // Make the webview transparent so the video preview is visible behind it.
-        QRScanner.show();
+        function onFailure (err) {
+        	navigator.notification.alert(err);
+        }
     }
 
     function cameraGo() {
