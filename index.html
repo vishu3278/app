@@ -21,7 +21,9 @@
         checkConnection();
         document.addEventListener("offline", onOffline, false);
         document.addEventListener("online", onOnline, false);
-        scannerPrepare();
+        // scannerPrepare();
+        app.permissions = cordova.plugins.permissions;
+        alert(app.permissions);
         /*var permissions = cordova.plugins.permissions;
         permissions.checkPermission(permission, successCallback, errorCallback);
         permissions.requestPermission(permission, successCallback, errorCallback);
@@ -35,6 +37,23 @@
     function onOnline() {
         navigator.vibrate([200, 400, 200]);
         navigator.notification.alert("You're connected");
+    }
+
+    function camPerm() {
+        app.permissions.checkPermission("android.permission.CAMERA", function(status) {
+            alert('success checking permission');
+            alert('Has CAMERA:', status.hasPermission);
+            if (!status.hasPermission) {
+                app.permissions.requestPermission("android.permission.CAMERA", function(status) {
+                    alert('success requesting CAMERA permission');
+                    cameraGo();
+                }, function(err) {
+                    alert('failed to set permission');
+                });
+            }
+        }, function(err) {
+            alert(err);
+        });
     }
 
     function checkConnection() {
@@ -114,7 +133,8 @@
 
     function scanQR(arguments) {
         alert("initiate");
-        permissions.requestPermission(permissions.CAMERA, success, error);
+        camPerm();
+        // permissions.requestPermission(permissions.CAMERA, success, error);
 
         function error() {
             console.warn('Camera permission is not turned on');
@@ -123,7 +143,7 @@
         function success(status) {
             if (!status.hasPermission) error();
             alert(cordova.plugins.barcodeScanner);
-            cordova.plugins.barcodeScanner.scan(
+            /*cordova.plugins.barcodeScanner.scan(
                 function(result) {
                     alert(JSON.stringify(result));
                     if (!result.cancelled) {
@@ -143,7 +163,7 @@
                     alert("Scanning failed: " + error);
                 },
                 scanOptions
-            );
+            );*/
         }
     }
 
