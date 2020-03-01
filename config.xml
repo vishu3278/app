@@ -23,7 +23,7 @@
     -->
     <content src="index.html"></content>
     <preference name="permissions" value="none"/>
-        <preference name="android-minSdkVersion" value="21" />
+        <preference name="android-minSdkVersion" value="20" />
         <preference name="KeepRunning" value="false" />
 
     <!-- Customize your app and platform with the preference element. -->
@@ -54,8 +54,8 @@
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
     
         <!-- <plugin name="cordova-plugin-qr-barcode-scanner" version="~8.0" /> -->
-        <!-- <plugin name="phonegap-plugin-barcodescanner" version="~8.0" /> -->
-        <plugin name="cordova-plugin-qrscanner" version="~2.5" />
+        <plugin name="phonegap-plugin-barcodescanner" version="~8.0" />
+        <!-- <plugin name="cordova-plugin-qrscanner" version="~2.5" /> -->
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
