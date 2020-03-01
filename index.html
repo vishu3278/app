@@ -22,6 +22,10 @@
         document.addEventListener("offline", onOffline, false);
         document.addEventListener("online", onOnline, false);
         scannerPrepare();
+        /*var permissions = cordova.plugins.permissions;
+        permissions.checkPermission(permission, successCallback, errorCallback);
+        permissions.requestPermission(permission, successCallback, errorCallback);
+        permissions.requestPermissions(permissions, successCallback, errorCallback);*/
     }
 
     function onOffline() {
@@ -110,28 +114,37 @@
 
     function scanQR(arguments) {
         alert("initiate");
-        alert(cordova.plugins.barcodeScanner);
-        cordova.plugins.barcodeScanner.scan(
-            function(result) {
-                alert(JSON.stringify(result));
-                if (!result.cancelled) {
-                    // In this case we only want to process QR Codes
-                    if (result.format == "QR_CODE") {
-                        var value = result.text;
-                        // This is the retrieved content of the qr code
-                        console.log(value);
+        permissions.requestPermission(permissions.CAMERA, success, error);
+
+        function error() {
+            console.warn('Camera permission is not turned on');
+        }
+
+        function success(status) {
+            if (!status.hasPermission) error();
+            alert(cordova.plugins.barcodeScanner);
+            cordova.plugins.barcodeScanner.scan(
+                function(result) {
+                    alert(JSON.stringify(result));
+                    if (!result.cancelled) {
+                        // In this case we only want to process QR Codes
+                        if (result.format == "QR_CODE") {
+                            var value = result.text;
+                            // This is the retrieved content of the qr code
+                            alert(value);
+                        } else {
+                            alert("Sorry, only qr codes this time ;)");
+                        }
                     } else {
-                        alert("Sorry, only qr codes this time ;)");
+                        alert("The user has dismissed the scan");
                     }
-                } else {
-                    alert("The user has dismissed the scan");
-                }
-            },
-            function(error) {
-                alert("Scanning failed: " + error);
-            },
-            scanOptions
-        );
+                },
+                function(error) {
+                    alert("Scanning failed: " + error);
+                },
+                scanOptions
+            );
+        }
     }
 
     function cameraGo(elem) {
@@ -210,7 +223,7 @@
                 <p>Scan QR code using this app.</p>
                 <!-- <button class="button is-primary">Scan</button> -->
             </div>
-            <div >
+            <div>
                 <button type="button" onclick="scanQR()" class="button">Scan</button>
                 <button type="button" onclick="alert('Compass')" class="button">Compass</button>
                 <button type="button" onclick="cameraGo()" class="button">Camera</button>
