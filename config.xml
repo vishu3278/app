@@ -8,10 +8,10 @@
         id        = "com.drsolution.scanapp"
         version   = "1.0.0">
 
-    <name>QR Demo</name>
+    <name>QR Scanner</name>
 
     <description>
-        Demo Application for QR code scanner.
+        App for QR code scanner.
     </description>
 
     <author href="http://wowitsolutions.com" email="vishu3278@gmail.com">
