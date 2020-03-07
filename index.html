@@ -84,12 +84,7 @@
         function onSuccess(result) {
             navigator.vibrate([200, 200, 200, 100, 100]);
             navigator.notification.alert(result);
-            $("#result").html(result);
             window.sessionStorage.setItem('QRCODE', result);
-            /*var xmlDoc = $.parseXML(result);
-            var $xml = $(xmlDoc);
-            var $Name = $xml.find('name').attr('first');
-            $('span').html($Name);*/
         }
 
         function onFailure(err) {
