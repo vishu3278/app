@@ -1,1 +1,1 @@
-Scanner test app for drsolution
+Scanner app
