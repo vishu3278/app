@@ -26,7 +26,7 @@
     <content src="index.html"></content>
     <preference name="permissions" value="none"/>
         <preference name="android-minSdkVersion" value="21" />
-        <preference name="KeepRunning" value="false" />
+        <preference name="KeepRunning" value="true" />
 
     <!-- Customize your app and platform with the preference element. -->
     <preference name="orientation" value="default" />        <!-- all: default means both landscape and portrait are enabled -->
@@ -78,24 +78,6 @@
     <icon src="res/icon/windows-phone/icon-48.png"  gap:platform="winphone" />
     <icon src="res/icon/windows-phone/icon-173.png" gap:platform="winphone"   gap:role="background" /> -->
 
-    <!-- Define app splash screen for each platform. -->
-    
-    <!--<gap:splash src="splash.png" gap:platform="android" gap:qualifier="port-ldpi" />
-    <gap:splash src="splash.png" gap:platform="android" gap:qualifier="port-mdpi" />
-    <gap:splash src="splash.png" gap:platform="android" gap:qualifier="port-hdpi" />
-    <gap:splash src="splash.png" gap:platform="android" gap:qualifier="port-xhdpi" />-->
-    <!-- <gap:splash src="res/screen/blackberry/screen-225.png"              gap:platform="blackberry" />
-    <gap:splash src="res/screen/ios/screen-iphone-portrait.png"         gap:platform="ios"     width="320" height="480" />
-    <gap:splash src="res/screen/ios/screen-iphone-portrait-2x.png"      gap:platform="ios"     width="640" height="960" />
-    <gap:splash src="res/screen/ios/screen-iphone-portrait-568h-2x.png" gap:platform="ios"     width="640" height="1136" />
-    <gap:splash src="res/screen/ios/screen-ipad-portrait.png"           gap:platform="ios"     width="768" height="1024" />
-    <gap:splash src="res/screen/ios/screen-ipad-landscape.png"          gap:platform="ios"     width="1024" height="768" />
-    <gap:splash src="res/screen/windows-phone/screen-portrait.jpg"      gap:platform="winphone" /> -->
-
-    <!--<gap:config-file platform="ios" parent="CFBundleShortVersionString">
-    <string>100</string>
-    </gap:config-file>-->
-
     <!--
         Define access to external domains.
 
@@ -129,17 +111,6 @@
         <preference name="ShowSplashScreen" value="true" /> <!-- defaults to "true" -->
         <preference name="SplashScreenWidth" value="480" /> <!-- defaults to "170" -->
         <preference name="SplashScreenHeight" value="800" /> <!-- defaults to "200" -->
-            
-        <!-- <config-file after="uses-permission" parent="/manifest" target="AndroidManifest.xml">
-            <uses-permission android:name="android.permission.CAMERA" />
-            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-            <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
-            <uses-permission android:name="android.permission.BLUETOOTH" />
-            <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-            <uses-permission android:name="android.permission.READ_CONTACTS" />
-            <uses-permission android:name="android.permission.WRITE_CONTACTS" />
-        </config-file> -->
         
         <!-- <icon src="icon2.png" density="ldpi" />
         <icon src="icon2.png" density="mdpi" />
