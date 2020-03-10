@@ -7,46 +7,47 @@ function onDeviceReady() {
     checkConnection();
     document.addEventListener("offline", onOffline, false);
     document.addEventListener("online", onOnline, false);
-    // $("#result").html(window.sessionStorage.getItem('QRCODE'));
-}
+    
+    function cameraGo() {
+        navigator.notification.alert("camera");
+        var options = {
+            sourceType: Camera.PictureSourceType.CAMERA,
+            // EncodingType: 'jpeg',
+            allowEdit: true,
+            targetWidth: 400,
+            targetHeight: 300,
+            quality: 50,
+            destinationType: Camera.DestinationType.DATA_URL,
+            saveToPhotoAlbum: true
+        };
+        alert(options,navigator.camera);
+        navigator.camera.getPicture(successCallback, errorCallback, options);
 
-function cameraGo() {
-    navigator.notification.alert("camera");
-    var options = {
-        sourceType: Camera.PictureSourceType.CAMERA,
-        // EncodingType: 'jpeg',
-        allowEdit: true,
-        targetWidth: 400,
-        targetHeight: 300,
-        quality: 50,
-        destinationType: Camera.DestinationType.DATA_URL,
-        saveToPhotoAlbum: true
-    };
-    alert(options,navigator.camera);
-    navigator.camera.getPicture(successCallback, errorCallback, options);
+        function successCallback(imageURI) {
+            document.getElementById("imgPreview").src = imageURI;
+            navigator.notification.alert("success");
+            cameraClean();
+        };
 
-    function successCallback(imageURI) {
-        document.getElementById("imgPreview").src = imageURI;
-        navigator.notification.alert("success");
-        cameraClean();
-    };
+        function errorCallback(error) {
+            navigator.notification.alert(error);
+        }
+    }
 
-    function errorCallback(error) {
-        navigator.notification.alert(error);
+    function cameraClean() {
+        navigator.camera.cleanup(onSuccess, onFail);
+
+        function onSuccess() {
+            console.log("Camera cleanup success.")
+        }
+
+        function onFail(message) {
+            navigator.notification.alert('Failed because: ' + message);
+        }
     }
 }
 
-function cameraClean() {
-    navigator.camera.cleanup(onSuccess, onFail);
 
-    function onSuccess() {
-        console.log("Camera cleanup success.")
-    }
-
-    function onFail(message) {
-        navigator.notification.alert('Failed because: ' + message);
-    }
-}
 
 function onOffline() {
     navigator.notification.alert("You lost connection!");
