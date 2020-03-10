@@ -1,12 +1,16 @@
 function cameraGo() {
-    alert("camera ready");
+    
     var options = {
         sourceType: Camera.PictureSourceType.CAMERA,
-        //  sourceType:Camera.PictureSourceType.PHOTOLIBRARY,
+        // EncodingType: 'jpeg',
+        allowEdit: true,
+        targetWidth: 400,
+        targetHeight: 300,
         quality: 50,
-        destinationType: Camera.DestinationType.FILE_URI
+        destinationType: Camera.DestinationType.DATA_URL,
+        saveToPhotoAlbum: true
     };
-
+    alert(navigator.camera);
     navigator.camera.getPicture(successCallback, errorCallback, options);
 
     function successCallback(imageURI) {
