@@ -95,20 +95,20 @@
     function cameraGo() {
         var options = {
             sourceType: Camera.PictureSourceType.CAMERA,
-            //        sourceType:Camera.PictureSourceType.PHOTOLIBRARY,
-            //        quality:50,
-            destinationType: Camera.DestinationType.FILE_URI
+            //  sourceType:Camera.PictureSourceType.PHOTOLIBRARY,
+                quality:50,
+                destinationType: Camera.DestinationType.FILE_URI
         };
 
         navigator.camera.getPicture(successCallback, errorCallback, options);
 
         function successCallback(imageURI) {
-            $("#capturi").html(imageURI);
-            $("#capture").attr('src', imageURI);
+            document.getElementById("imgPreview").src = imageURI;
+            navigator.notification.alert("success");
         };
 
         function errorCallback(message) {
-            alert(message);
+            navigator.notification.alert(message);
         }
     }
 
