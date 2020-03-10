@@ -1,5 +1,5 @@
 function cameraGo() {
-    
+    navigator.notification.alert("camera");
     var options = {
         sourceType: Camera.PictureSourceType.CAMERA,
         // EncodingType: 'jpeg',
@@ -10,7 +10,7 @@ function cameraGo() {
         destinationType: Camera.DestinationType.DATA_URL,
         saveToPhotoAlbum: true
     };
-    alert(navigator.camera);
+    alert(options,navigator.camera);
     navigator.camera.getPicture(successCallback, errorCallback, options);
 
     function successCallback(imageURI) {
