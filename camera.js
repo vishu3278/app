@@ -7,8 +7,6 @@ function onDeviceReady() {
     checkConnection();
     document.addEventListener("offline", onOffline, false);
     document.addEventListener("online", onOnline, false);
-    
-    
 }
 
 function onOffline() {
@@ -16,7 +14,7 @@ function onOffline() {
 }
 
 function onOnline() {
-    navigator.vibrate([200, 400, 200]);
+    navigator.vibrate([100, 200, 100]);
     // navigator.notification.alert("You're connected");
 }
 
@@ -33,10 +31,9 @@ function checkConnection() {
     states[Connection.CELL] = 'Cell generic connection';
     states[Connection.NONE] = 'No network connection';
 
-    // $("#networkError").html(states[networkState]);
     // alert('Connection type: ' + states[networkState]);
     if (states[networkState] !== Connection.NONE) {
-        navigator.vibrate([200, 400, 200]);
+        navigator.vibrate([100, 100, 50]);
     } else {
         navigator.notification.alert("Connect to internet to proceed!");
     }
@@ -50,19 +47,16 @@ var scanOptions = {
     'beep_enabled': true, // Enables a beep after the scan
     'scan_type': 'normal', // Types of scan mode: normal = default black with white background / inverted = white bars on dark background / mixed = normal and inverted modes
     'barcode_formats': [
-        'QR_CODE',
-        'CODE_39',
-        'CODE_128'
+        'QR_CODE'
     ], // Put a list of formats that the scanner will find. A blank list ([]) will enable scan of all barcode types
     'extras': {} // Additional extra parameters. See [ZXing Journey Apps][1] IntentIntegrator and Intents for more details
 }
 
 function scanQR(arguments) {
-    // alert("initiate");
     window.plugins.zxingPlugin.scan(scanOptions, onSuccess, onFailure);
 
     function onSuccess(result) {
-        navigator.vibrate([200, 200, 200, 100, 100]);
+        navigator.vibrate([100, 50, 100, 50, 100]);
         navigator.notification.alert(result);
         window.sessionStorage.setItem('QRCODE', result);
     }
@@ -73,10 +67,9 @@ function scanQR(arguments) {
 }
 
 function cameraGo() {
-    navigator.notification.alert("camera");
     var options = {
         sourceType: Camera.PictureSourceType.CAMERA,
-        // EncodingType: 'jpeg',
+        EncodingType: 'jpeg',
         allowEdit: true,
         targetWidth: 400,
         targetHeight: 300,
@@ -84,12 +77,11 @@ function cameraGo() {
         destinationType: Camera.DestinationType.DATA_URL,
         saveToPhotoAlbum: true
     };
-    alert(options,navigator.camera);
+    alert(options, navigator.camera);
     navigator.camera.getPicture(successCallback, errorCallback, options);
 
-    function successCallback(imageURI) {
-        document.getElementById("imgPreview").src = imageURI;
-        navigator.notification.alert("success");
+    function successCallback(imageData) {
+        document.getElementById("imgPreview").src = "data:image/jpeg;base64," + imageData;
         cameraClean();
     };
 
@@ -106,10 +98,10 @@ function cameraClean() {
     }
 
     function onFail(message) {
-        navigator.notification.alert('Failed because: ' + message);
+        navigator.notification.alert('Camera cleanup failed because: ' + message);
     }
 }
 
-function exitApp(){
+function exitApp() {
     navigator.app.exitApp();
- }
+}
