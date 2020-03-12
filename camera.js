@@ -77,7 +77,7 @@ function cameraGo() {
         destinationType: Camera.DestinationType.DATA_URL,
         saveToPhotoAlbum: true
     };
-    alert(options, navigator.camera);
+
     navigator.camera.getPicture(successCallback, errorCallback, options);
 
     function successCallback(imageData) {
