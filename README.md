@@ -1,1 +1,1 @@
-Scanner app
+Scanner app for thesupercop
